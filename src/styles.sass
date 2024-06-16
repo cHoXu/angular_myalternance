@@ -1,5 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@fontsource/poppins"
 
+\:root
+  --mya-primary: #00C8F5
+  --mya-secondary: #4265FF
+  --mya-primary-text: #4F4F4F
+  --mya-secondary-text: white
 body
   font-family: 'Poppins', sans-serif
+
+.btn-primary
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  color: var(--mya-secondary-text)
+  .mat-icon
+    margin-left: 10px
+.student.btn-primary
+  border-color: var(--mya-primary)
+  background-color: var(--mya-primary)
+.company.btn-primary
+  border-color: var(--mya-secondary)
+  background-color: var(--mya-secondary)

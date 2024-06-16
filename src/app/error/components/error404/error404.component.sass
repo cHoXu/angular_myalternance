@@ -1,0 +1,62 @@
+$screen-sm-min: 768px
+$clear-blue_500: #00C8F5
+$dark-blue_400: #4265FF
+
+.blur
+  width: 30em
+  height: 30em
+  position: fixed
+  border-radius: 50%
+  transform: translateX(-100%) translateY(-100%)
+  -ms-transform: translateX(-100%) translateY(-100%)
+.blur.top-left
+  top: 0
+  left: 0
+.blur.bottom-right
+  right: 0
+  bottom: 0
+  transform: translateX(100%) translateY(100%) rotate(180deg)
+  -ms-transform: translateX(-100%) translateY(-100%) rotate(180deg)
+
+.student.blur
+  box-shadow: 15em 15em 30em 1em rgba($clear-blue_500, 0.3)
+.company.blur
+  box-shadow: 15em 15em 30em 1em rgba($dark-blue_400, 0.3)
+
+.error-page__container
+  display: flex
+  min-height: 100vh
+  text-align: center
+  align-items: center
+  flex-direction: column
+  justify-content: center
+  h1
+    font-size: 18em
+    margin-block-end: unset
+  .error-description
+    padding-bottom: 2em
+    p
+      color: var(--mya-primary-text)
+    p:first-child
+      font-size: 1.7em
+    p:last-child
+      font-size: 1.2em
+  a
+    border-radius: 84px
+
+.student.error-page__container
+  h1
+    color: var(--mya-primary)
+.company.error-page__container
+  h1
+    color: var(--mya-secondary)
+
+@media screen and (max-width: $screen-sm-min)
+  .error-page__container
+    h1
+      font-size: 10em
+    .error-description
+      p:first-child
+        font-size: 1.2em
+      p:last-child
+        font-size: 1em
