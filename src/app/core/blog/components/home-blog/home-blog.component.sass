@@ -1,0 +1,198 @@
+$black_950: #1F1F1F
+$grey_100: #D9D9D9
+$clear-blue_100: #DEF6FF
+$secondary: white
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+$border-radius-min-size: 2em
+$screen-sm-min: 768px
+
+$secondary-text-color: $black_950
+
+@mixin common-header($background-image)
+  width: 100%
+  height: 450px
+  display: flex
+  align-items: end
+  justify-content: start
+  background-size: cover
+  background-position: center
+  background-image: url($background-image)
+  .header-content
+    color: $secondary
+    margin: 80px auto
+    width: var(--main-max-width)
+    text-shadow: black 0.1em 0.1em 0.2em
+    h1
+      font-size: 3em
+      font-weight: bold
+    p
+      font-size: 1.5em
+  @media (max-width: $screen-sm-min)
+    .header-content
+      padding: 0 24px
+
+
+
+.header
+  @include common-header('/images/blog/blog-background.png')
+.header.article
+  @include common-header('/images/blog/article-background.png')
+  .header-content
+    nav ol
+      color: $tertiary-text-color
+      li a
+        color: $tertiary-text-color
+      li.active
+        color: $tertiary-text-color
+        font-weight: bold
+.articles-container
+  display: flex
+  height: 1032px
+  color: $black_950
+  margin: 80px auto
+  align-items: start
+  flex-direction: row
+  width: var(--main-max-width)
+  justify-content: space-between
+  .menu-article
+    width: 300px
+    height: 100%
+    display: flex
+    padding: 20px
+    align-items: start
+    flex-direction: column
+    justify-content: start
+    h2
+      font-size: 3em
+      margin-bottom: 30px
+    ul
+      width: 100%
+      list-style-type: none
+      padding: 0
+      li
+        width: 100%
+        font-size: 1.5em
+        margin-bottom: 10px
+        a
+          font-size: 12px
+          color: $black_950
+          text-decoration: none
+        &:hover
+          border-bottom: 1px solid $clear-blue_500
+          a
+            color: $clear-blue_500
+  .articles
+    gap: 30px
+    width: 100%
+    height: 100%
+    display: flex
+    flex-wrap: wrap
+    align-items: start
+    flex-direction: row
+    justify-content: space-between
+    .mobile-only
+      display: none
+    .card.article
+      width: 18rem
+      border: unset
+      .card-body
+        h5
+          color: $clear-blue_500
+        a.btn-custom
+          width: 100%
+          border: unset
+          padding-top: 12px
+          padding-bottom: 12px
+          color: $tertiary-text-color
+          background-color: $clear-blue_500
+          &:hover
+            color: $secondary-text-color
+            background-color: $clear-blue_100
+
+.articles-background
+  display: flex
+  margin: 80px auto
+  align-items: center
+  width: var(--main-max-width)
+  justify-content: center
+  background-color: $clear-blue_100
+  border-radius: $border-radius-min-size
+  .articles-container.secondary
+    height: fit-content
+    width: 95%
+    .menu-article
+      ul li
+        a
+          color: $clear-blue_500
+        &:hover
+          border-bottom: 1px solid $clear-blue_500
+
+/* SECTION ARTICLE ITEM */
+.articles-container.article
+  height: fit-content
+  .article
+    width: 850px
+    .article-header
+      h2
+        font-size: 3em
+        padding-top: 20px
+        margin-bottom: 48px
+      p
+        font-size: 1.5em
+        &:last-child
+          margin-bottom: 80px
+    .article-image
+      margin-bottom: 80px
+      img
+        width: 100%
+        object-fit: cover
+        border-radius: $border-radius-min-size
+    .paragraph
+      margin-bottom: 80px
+      h3
+        font-size: 2em
+        margin-bottom: 48px
+      p
+        font-size: 1.5em
+        margin-bottom: 48px
+        &:last-child
+          margin-bottom: 0
+
+// Mobile version
+@media (max-width: $screen-sm-min)
+  .header
+    @include common-header('/images/blog/blog-background-mobile.png')
+  .articles-container
+    width: 100%
+    height: fit-content
+    align-items: center
+    .mobile-only
+      display: block
+    .menu-article
+      display: none
+    .articles
+      align-items: center
+      flex-direction: column
+      .mobile-only
+        display: block
+      h2
+        width: 90%
+        font-size: 2em
+        text-align: left
+        font-weight: bold
+        margin-bottom: 30px
+      .card.article
+        width: 90%
+  .articles-background
+    width: 100%
+
+  //Pour la page article
+  .header.article
+    @include common-header('/images/blog/article-background.png')
+    .header-content
+      nav ol li
+        font-size: 12px
+  .articles-container.article
+    .article
+      width: 90%
