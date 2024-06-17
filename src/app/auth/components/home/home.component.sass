@@ -1,0 +1,229 @@
+$black_950: #1F1F1F
+$grey_100: #D9D9D9
+$secondary: white
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+$border-radius-min-size: 2em
+$screen-sm-min: 768px
+
+@mixin form-block($width: 410px, $border-radius-size: 2em)
+  width: $width
+  .input-group-custom
+    width: 100%
+    display: flex
+    padding-left: 10px
+    padding-right: 10px
+    margin-bottom: 20px
+    flex-direction: row
+    align-items: center
+    justify-content: start
+    border: 2px solid $black_950
+    border-radius: $border-radius-size
+    .input-group-text-custom
+      margin: 10px
+    input
+      border: unset
+      width: 80%
+      &:focus
+        outline: unset
+  .input-group-custom:focus-within
+    border: 2px solid $clear-blue_500
+  .form-options
+    width: 100%
+    display: flex
+    margin-bottom: 24px
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .remember-me
+      display: flex
+      align-items: center
+      flex-direction: row
+      justify-content: space-between
+      img
+        width: 20px
+        height: 20px
+        margin-right: 10px
+  // Pour l'inscription
+  .name-fields
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .input-group-custom
+      width: 49%
+      padding-top: 10px
+      padding-bottom: 10px
+  .error-msg
+    display: flex
+    color: red
+    margin-bottom: 24px
+    align-items: center
+    flex-direction: row
+    justify-content: start
+    i
+      margin-right: 10px
+      font-size: 21px
+    p
+      margin: unset
+      padding: unset
+      font-size: 15px
+  .input-labelled
+    width: 100%
+    display: flex
+    align-items: start
+    flex-direction: column
+    .input-group-custom
+      width: 95%
+    label
+      font-size: 12px
+      margin-bottom: 5px
+
+@mixin switchLink($width: 378px)
+  width: $width
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .link-block
+    width: 50%
+    display: flex
+    padding-top: 24px
+    padding-bottom: 24px
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    a
+      color: $black_950
+      margin-bottom: 12px
+      text-decoration: none
+    .underline
+      width: 100%
+      height: 2px
+      background-color: $grey_100
+  .link-block:hover
+    .underline
+      background-color: $clear-blue_500
+  .link-block.active
+    .underline
+      background-color: $clear-blue_500
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+
+.connexion-container
+  width: 100%
+  height: 100vh
+  color: $black_950
+  @include flex(row, center, center)
+  .block
+    width: 50%
+    height: 100%
+    form
+      display: flex
+      margin-bottom: 48px
+      align-items: center
+      flex-direction: column
+      justify-content: center
+      button.btn-custom
+        border: unset
+        width: fit-content
+        padding: 12px 24px
+        color: $tertiary-text-color
+        background-color: $black_950
+        border-radius: $border-radius-min-size
+  .connexion-illustration
+    display: flex
+    align-items: center
+    background-size: cover
+    justify-content: center
+    background-position: center
+  .connexion-form
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    .previous
+      top: 1em
+      left: 1em
+      cursor: grab
+      font-size: 50px
+      position: absolute
+    .switch-link
+      @include switchLink(378px)
+    .form-block
+      @include form-block()
+  .social-connexion
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    .social-icons
+      width: 100%
+      display: flex
+      margin-bottom: 48px
+      align-items: center
+      flex-direction: row
+      justify-content: space-between
+      a
+        text-decoration: none
+        img
+          width: 30px
+          height: 30px
+  a
+    text-decoration: none
+    color: $clear-blue_500
+.connexion-container.student
+  .connexion-illustration
+    background-image: url("/images/connexion/background-company.png")
+    .space-access
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      flex-direction: column
+      justify-content: center
+      color: $tertiary-text-color
+      background-color: rgba($black_950, 0.5)
+      .btn-custom
+        padding: 12px
+        color: $tertiary-text-color
+        border: 2px solid $secondary
+        background-color: transparent
+        border-radius: $border-radius-min-size
+        &:hover
+          background-color: rgba($secondary, 0.2)
+
+// Mobile version
+@media (max-width: $screen-sm-min)
+  body
+    overflow: auto
+  .connexion-container
+    height: fit-content
+    .connexion-form
+      .previous
+        top: .5em
+        left: .5em
+        font-size: 30px
+  .connexion-container.student, .connexion-container.company
+    align-items: start
+    flex-direction: column
+    .block
+      width: 100%
+    .connexion-form
+      order: 2
+      width: 100%
+      margin-top: 24px
+      .switch-link
+        width: 95%
+      .form-block
+        width: 95%
+    .connexion-illustration
+      order: 1
+      height: 280px
+      .space-access
+        h3
+          margin-bottom: 24px
