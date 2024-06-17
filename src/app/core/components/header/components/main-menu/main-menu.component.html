@@ -1,0 +1,24 @@
+<p class="d-lg-none">Navigation</p>
+<ul [ngClass]="universe" class="navbar-nav">
+  @for (item of menuItems; track item.name) {
+<li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"
+         aria-current="page"
+         routerLink="{{ item.link }}"
+      >{{ item.name }}</a>
+    </li>
+  }
+</ul>
+
+<div class="d-lg-none">
+  <p>Suivez-nous!</p>
+  <div class="navbar__link">
+    <a href="#">Instagram</a>
+  </div>
+  <div class="navbar__link">
+    <a href="#">TikTok</a>
+  </div>
+  <div class="navbar__link">
+    <a href="#">Linkedin</a>
+  </div>
+</div>

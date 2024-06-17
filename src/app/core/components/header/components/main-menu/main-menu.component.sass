@@ -1,0 +1,27 @@
+
+.navbar-nav
+  height: var(--mya-nav-max-height)
+  .nav-item
+    display: flex
+    align-items: center
+    justify-content: center
+    border-bottom: 2px solid white
+
+.student.navbar-nav
+    .nav-item
+      &:hover
+        border-bottom: 2px solid var(--mya-primary)
+    .nav-item.active
+      border-bottom: 2px solid var(--mya-primary)
+.company.navbar-nav
+    .nav-item
+      &:hover
+        border-bottom: 2px solid var(--mya-secondary)
+    .nav-item.active
+      border-bottom: 2px solid var(--mya-secondary)
+
+@media screen and (max-width: 992px)
+  .navbar-nav
+    padding: unset
+    width: 100%
+    height: fit-content

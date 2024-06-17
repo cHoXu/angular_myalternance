@@ -2,13 +2,19 @@
 @import "@fontsource/poppins"
 
 \:root
+  --mya-max-width: 1290px
+  --mya-nav-max-height: 64px
+
   --mya-primary: #00C8F5
   --mya-secondary: #4265FF
   --mya-primary-text: #4F4F4F
   --mya-secondary-text: white
+
 body
   font-family: 'Poppins', sans-serif
 
+
+// Buttons
 .btn-primary
   display: flex
   flex-direction: row
@@ -17,9 +23,7 @@ body
   color: var(--mya-secondary-text)
   .mat-icon
     margin-left: 10px
-.student.btn-primary
-  border-color: var(--mya-primary)
-  background-color: var(--mya-primary)
-.company.btn-primary
-  border-color: var(--mya-secondary)
-  background-color: var(--mya-secondary)
+.btn
+  border: 2px solid
+  border-radius: 2em
+  padding: 12px 24px

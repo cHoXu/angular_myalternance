@@ -3,6 +3,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {UniverseService} from "../../../shared/services/universe.service";
 import {NgClass} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-error404',
@@ -10,7 +11,8 @@ import {NgClass} from "@angular/common";
   imports: [
     MatIconModule,
     MatButtonModule,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './error404.component.html',
   styleUrl: './error404.component.sass'

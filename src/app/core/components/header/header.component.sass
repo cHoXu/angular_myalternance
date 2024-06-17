@@ -1,1 +1,43 @@
+.navbar
+  z-index: 2
+  padding: unset
+  position: sticky
+  margin: 40px auto
+  border-radius: 40px
+  max-width: var(--mya-max-width)
+  height: var(--mya-nav-max-height)
+  box-shadow: rgba(black, .2) 0.1em 0.1em 0.5em 0.1em
+  .navbar-brand.logo
+    width: 162px
+    height: 24px
+    margin-left: 48px
+    background-size: cover
+    background-position: center
+    background-image: url('/mya/logo.png')
+  .navbar-toggler
+    border: none
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler-icon:focus
+    outline: none
+    box-shadow: none
+  #navbarSupportedContent
+    justify-content: space-between
 
+.navbar.open
+  border-top-left-radius: 32px
+  border-top-right-radius: 32px
+  border-bottom-right-radius: unset
+  border-bottom-left-radius: unset
+
+@media screen and (max-width: 992px)
+  .container-fluid
+    padding: unset
+    height: var(--mya-nav-max-height)
+  #navbarSupportedContent
+    top: 45px
+    z-index: 1
+    width: 100%
+    padding-top: 20px
+    position: absolute
+    background-color: rgba(white, 0.9)
