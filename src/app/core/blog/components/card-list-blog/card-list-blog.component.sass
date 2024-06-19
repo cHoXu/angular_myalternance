@@ -1,0 +1,25 @@
+$screen-sm-min: 1024px
+
+.articles
+  gap: 5px
+  width: 80vw
+  display: flex
+  flex-wrap: wrap
+  align-items: start
+  flex-direction: row
+  justify-content: space-between
+  .mobile-only
+    display: none
+.articles.mostPopular
+  gap: 5%
+  align-items: center
+  justify-content: center
+
+@media (max-width: $screen-sm-min)
+  .articles
+    width: 100%
+    height: fit-content
+    align-items: center
+    justify-content: center
+  .articles.mostPopular
+    gap: 15px

@@ -1,0 +1,32 @@
+$clear-blue_100: #DEF6FF
+$black_950: #1F1F1F
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+$secondary-text-color: $black_950
+
+.card.article
+  width: 18rem
+  border: unset
+  .cover
+    height: 10rem
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+  .card-body
+    h5
+      height: 3rem
+      color: $clear-blue_500
+    p
+      height: 4.5rem
+      color: $black_950
+      overflow: hidden
+    a.btn-custom
+      width: 100%
+      border: unset
+      padding-top: 12px
+      padding-bottom: 12px
+      color: $tertiary-text-color
+      background-color: $clear-blue_500
+      &:hover
+        color: $secondary-text-color
+        background-color: $clear-blue_100

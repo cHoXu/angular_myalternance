@@ -1,0 +1,21 @@
+$clear-blue_100: #DEF6FF
+$border-radius-min-size: 2em
+$clear-blue_500: #00C8F5
+$screen-sm-min: 1024px
+
+.bloc-container
+  width: 100%
+  padding: 20px
+  display: flex
+  margin: 80px auto
+  align-items: start
+  justify-content: space-between
+.bloc-container.mostPopular
+  padding: 20px
+  align-items: center
+  background-color: $clear-blue_100
+  border-radius: $border-radius-min-size
+
+@media (max-width: $screen-sm-min)
+  .bloc-container
+    padding: 0
