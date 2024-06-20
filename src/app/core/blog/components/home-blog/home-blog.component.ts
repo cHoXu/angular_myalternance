@@ -6,6 +6,8 @@ import {CardListBlogComponent} from "../card-list-blog/card-list-blog.component"
 import {HeaderBlogComponent} from "../header-blog/header-blog.component";
 import {BlocBlogComponent} from "../bloc-blog/bloc-blog.component";
 import {BlocEnum} from "../../enum/bloc.enum";
+import {RouterOutlet} from "@angular/router";
+import {ArticleBlogComponent} from "../article-blog/article-blog.component";
 
 @Component({
   selector: 'app-home-blog',
@@ -16,12 +18,13 @@ import {BlocEnum} from "../../enum/bloc.enum";
     CardBlogComponent,
     CardListBlogComponent,
     HeaderBlogComponent,
-    BlocBlogComponent
+    BlocBlogComponent,
+    RouterOutlet,
+    ArticleBlogComponent
   ],
   templateUrl: './home-blog.component.html',
   styleUrl: './home-blog.component.sass'
 })
 export class HomeBlogComponent {
-
     protected readonly MenuEnum = BlocEnum;
 }

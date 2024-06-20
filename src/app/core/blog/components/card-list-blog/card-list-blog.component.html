@@ -1,5 +1,5 @@
 <div class="articles" [ngClass]="contentType">
-  <h2 class="mobile-only">{{ menuTitle }}</h2>
+  <h2 class="mobile-only">{{ title }}</h2>
   <ng-container *ngFor="let article of articles">
     <app-card-blog [article]="article" />
   </ng-container>

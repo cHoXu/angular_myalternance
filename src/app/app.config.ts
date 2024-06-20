@@ -5,9 +5,13 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import {provideHttpClient, withFetch, withInterceptorsFromDi} from "@angular/common/http";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {UniverseService} from "./shared/services/universe.service";
+import {AuthService} from "./shared/services/auth.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    UniverseService,
+    AuthService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

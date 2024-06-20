@@ -18,6 +18,5 @@ export class BlocBlogComponent implements OnInit {
   @Input() contentType!: string;
 
   ngOnInit(): void {
-    console.log('BlocBlogComponent', this.contentType);
   }
 }

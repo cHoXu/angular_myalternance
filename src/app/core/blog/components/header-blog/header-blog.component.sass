@@ -10,15 +10,22 @@ $screen-sm-min: 1024px
   background-position: center
   background-image: url('/images/blog/blog-background.png')
   .header-content
+    width: 90%
     color: white
     margin: 80px auto
-    width: var(--main-max-width)
     text-shadow: black 0.1em 0.1em 0.2em
     h1
       font-size: 3em
       font-weight: bold
     p
       font-size: 1.5em
+    nav ol
+      color: white
+      li a
+        color: white
+      li.active
+        color: white
+        font-weight: bold
 
 @media (max-width: $screen-sm-min)
   .header

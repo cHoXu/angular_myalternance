@@ -13,7 +13,7 @@ export class ArticlesService {
       'Trouver ma formation en alternance.',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n' +
       'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      new Link('https://www.google.com', 'Lire la suite'),
+      new Link('article/1', 'Lire la suite'),
       new Image(
         1,
         'https://www.placealemploi.fr/wp-content/uploads/bfi_thumb/Entretien-embauche-questions-scaled-3dzr96ugjeyob3tvz3vsay.jpg',
@@ -68,6 +68,10 @@ export class ArticlesService {
   ];
   findArticles(options: any = {}): Article[]{
     return this.articles;
+  }
+
+  findArticle(id: number): Article{
+    return this.articles.find(article => article.id == id) as Article;
   }
 
   findMostPopularArticles(quantity:number = 3): Article[]{

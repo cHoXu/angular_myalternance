@@ -20,7 +20,7 @@ import {MenusService} from "../../service/menus.service";
 export class CardListBlogComponent implements OnInit {
   @Input() contentType!: string;
   articles!: Article[];
-  menuTitle!: string;
+  title!: string;
 
   constructor(
     private menusService: MenusService,
@@ -31,14 +31,12 @@ export class CardListBlogComponent implements OnInit {
     switch (this.contentType) {
       case BlocEnum.MAIN:
         this.articles = this.articlesService.findArticles()
-        this.menuTitle = this.menusService.findMenuTitleByMenuEnum(BlocEnum.MAIN)
+        this.title = this.menusService.findMenuTitleByMenuEnum(BlocEnum.MAIN)
         break;
       case BlocEnum.MOST_POPULAR:
         this.articles = this.articlesService.findMostPopularArticles()
-        this.menuTitle = this.menusService.findMenuTitleByMenuEnum(BlocEnum.MOST_POPULAR)
+        this.title = this.menusService.findMenuTitleByMenuEnum(BlocEnum.MOST_POPULAR)
         break;
     }
   }
-
-  protected readonly BlocEnum = BlocEnum;
 }

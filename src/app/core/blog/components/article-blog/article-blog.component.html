@@ -1,0 +1,92 @@
+<app-header-blog
+  [backgroundImage]="article.image.url"
+  [displayBreadcrumb]="true"
+  [title]="article.title"
+  [contentType]="BlocEnum.PAGE_ARTICLE"
+/>
+
+<div class="bloc-container" [ngClass]="BlocEnum.PAGE_ARTICLE">
+  <app-menu-blog [contentType]="BlocEnum.PAGE_ARTICLE"  />
+  <article [ngClass]="BlocEnum.PAGE_ARTICLE">
+      <div class="article-header">
+        <h2>{{ article.title | titlecase }}</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ultrices dui sapien eget mi proin sed libero. Diam quam nulla porttitor
+          massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+        <p>
+          Odio euismod lacinia at quis risus sed vulputate odio ut.
+          Lectus urna duis convallis convallis tellus id. Mi quis hendrerit dolor
+          magna eget est. Lectus mauris ultrices eros in cursus turpis massa tincidunt.
+        </p>
+      </div>
+      <div class="article-image">
+        <img src="{{ article.image.url }}" alt="{{ article.image.title }}">
+      </div>
+      <div class="paragraph">
+        <h3>Ceci est le premier paragraphe.</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin
+          sed libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+        <p>
+          Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+          convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices
+          eros in cursus turpis massa tincidunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed libero.
+          Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed libero.
+          Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin
+          sed libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+      </div>
+
+      <div class="paragraph">
+        <h3>Ceci est le premier paragraphe.</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin
+          sed libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+        <p>
+          Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+          convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices
+          eros in cursus turpis massa tincidunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed libero.
+          Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed libero.
+          Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin
+          sed libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+        </p>
+      </div>
+  </article>
+</div>
+
+<app-bloc-blog [contentType]="BlocEnum.MOST_POPULAR" />
