@@ -1,0 +1,183 @@
+$border-radius-min-size: 2em
+$black_950: #1F1F1F
+$clear-blue_500: #00C8F5
+$border-radius-size: 4em
+$screen-sm-min: 1024px
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+@mixin filigrane($border-radius, $margin, $width: 80%)
+  padding: 1em
+  width: $width
+  height: fit-content
+  margin: $margin 0 0 $margin
+  border: 2px solid white
+  border-radius: $border-radius
+  background-color: rgba(white, 0.1)
+  -webkit-backdrop-filter: blur(5px) /* assure la compatibilité avec safari */
+  backdrop-filter: blur(5px)
+  p
+    width: 100%
+    height: 90%
+    display: flex
+    margin: unset
+    padding: unset
+    color: white
+    align-items: center
+    justify-content: center
+    flex-direction: column
+  strong
+    font-size: 2.5em
+
+.hook-block
+  width: 90%
+  display: flex
+  margin: 0 auto
+  flex-direction: row
+  .hook_container
+    width: 50%
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    .chooser
+      width: 90%
+      aspect-ratio: 1.6
+      @include flex(column, space-between, start)
+      h1
+        color: $black_950
+        font-size: 4.7em
+        line-height: 1
+        span
+          color: $clear-blue_500
+      p
+        font-size: 1.5em
+      .buttons_container
+        .btn-custom
+          transition: 0.3s
+          color: white
+          padding: .9em 1.5em
+          margin-right: .5em
+          text-decoration: none
+          background-color: $clear-blue_500
+          border: 2px solid $clear-blue_500
+          border-radius: $border-radius-size
+          span
+            text-shadow: 0 5px 5px rgba($black_950, 0.5)
+          i
+            transition: .5s
+            margin-left: .5em
+          &:hover
+            border-color: rgba($clear-blue_500, 0.4)
+            background-color: rgba($clear-blue_500, 0.6)
+            i
+              margin-left: 1em
+        .btn-custom.company
+          color: $black_950
+          border-color: $black_950
+          background-color: white
+          &:hover
+            color: white
+            background-color: $black_950
+    .offers
+      width: 90%
+      aspect-ratio: 2.1
+      background-size: cover
+      border-radius: $border-radius-min-size
+      background-image: url("/images/landing-page/offer-background.png")
+      .filigrane
+        @include filigrane(.5em, 25px, 241px)
+    .informations
+      display: flex
+      width: 90%
+      flex-direction: row
+      justify-content: space-between
+      .helper
+        width: 50%
+        aspect-ratio: 1/1
+        display: flex
+        align-items: end
+        justify-content: center
+        border-radius: $border-radius-min-size
+        .filigrane
+          @include filigrane(.5em, 0)
+          margin-bottom: 25px
+      .helper.search-helper
+        background-size: cover
+        background-image: url("/images/landing-page/search-helper-background.png")
+      .helper.advices-helper
+        background-size: cover
+        background-image: url("/images/landing-page/advices-helper-background.png")
+  .choose-profil
+    align-items: start
+  .three-blocks
+    align-items: end
+
+@media (min-width: 2550px)
+  .hook-block
+    .hook_container
+      .chooser
+        h1
+          font-size: 6.5em
+        p
+          font-size: 2em
+@media (max-width: 1440px)
+  .hook-block
+    .hook_container
+      .chooser
+        h1
+          font-size: 4em
+        p
+          font-size: 1em
+@media (max-width: 1280px)
+  .hook-block
+    .hook_container
+      .chooser
+        h1
+          font-size: 3.5em
+        p
+          font-size: 1em
+
+// Mobile version
+@media (max-width: $screen-sm-min)
+  .hook-block
+    @include flex(column, start, center)
+    .hook_container
+      width: 100%
+      align-items: center
+      .chooser
+        width: 100%
+        h1
+          font-size: 2.5em
+        p
+          font-size: 16px
+        .buttons_container
+          text-wrap: nowrap
+          @include flex(column, start, start)
+          .btn-custom
+            margin-bottom: 12px
+    .hook_container.three-blocks
+      margin-top: 32px
+      align-items: center
+      .offers
+        width: 100%
+        height: 290px
+        .filigrane
+          @include filigrane(.5em, 25px)
+      .informations
+        width: 100%
+        .helper
+          width: 100%
+          aspect-ratio: 1.2
+          .filigrane
+            width: 90%
+            padding: unset
+            aspect-ratio: 1.4
+            font-size: .9em
+            font-weight: bold
+            margin-bottom: 6%
+            p
+              font-size: .8em

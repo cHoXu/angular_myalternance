@@ -1,0 +1,274 @@
+$border-radius-min-size: 2em
+$black_950: #1F1F1F
+$clear-blue_100: #DEF6FF
+$clear-blue_500: #00C8F5
+$border-radius-size: 4em
+$screen-sm-min: 1024px
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: white)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
+
+.hook-block
+  width: 90%
+  display: flex
+  margin: 0 auto
+  padding-top: 120px
+  flex-direction: row
+  justify-content: space-between
+  .hook_container.three-blocks
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  .chooser
+      width: 40vw
+      height: 100%
+      display: flex
+      align-items: start
+      flex-direction: column
+      border: 2px solid $clear-blue_500
+      background-color: $clear-blue_100
+      border-radius: $border-radius-min-size
+      .chooser_description
+        height: 20%
+        padding-top: 8%
+        padding-left: 8%
+        padding-right: 8%
+        h3
+          font-size: 3em
+      .chooser_background
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: start
+        justify-content: end
+        background-size: cover
+        flex-direction: column
+        background-image: url("/images/landing-page/training-background.png")
+        background-position-y: -80px
+        border-bottom-left-radius: $border-radius-min-size
+        border-bottom-right-radius: $border-radius-min-size
+        .buttons_container
+          margin-left: 8%
+          margin-bottom: 5%
+          .btn-custom
+            text-decoration: unset
+            @include buttonLikeNavbarCustom(transparent, rgba(white, 0.3), white)
+            font-size: 1em
+            border: 2px solid white
+            &:hover
+              color: white
+
+  .finder
+      width: 40vw
+      height: 50%
+      display: flex
+      flex-direction: row
+      border: 2px solid $clear-blue_500
+      border-radius: $border-radius-min-size
+      .finder_description
+        width: 50%
+        display: flex
+        margin-top: 32px
+        margin-left: 32px
+        flex-direction: column
+        justify-content: space-between
+        h3
+          font-size: 2.5em
+        .buttons_container
+          margin-bottom: 10%
+          .btn-custom
+            text-decoration: unset
+            @include buttonLikeNavbarCustom($clear-blue_500, $clear-blue_100, white)
+      .finder_background
+        width: 50%
+        margin-top: 32px
+        background-size: cover
+        background-image: url("/images/landing-page/finder-background.png")
+        border-bottom-right-radius: $border-radius-min-size
+  .informations
+    width: 40vw
+    height: 45%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .helper.cv-helper
+      width: 50%
+      aspect-ratio: 0.8
+      align-items: start
+      justify-content: start
+      background-size: cover
+      background-position: center
+      border-radius: $border-radius-min-size
+      background-image: url("/images/landing-page/cv-helper-background.png")
+      .helper__inner
+        height: 100%
+        color: white
+        display: flex
+        padding-top: 8%
+        padding-left: 8%
+        padding-bottom: 5%
+        align-items: start
+        flex-direction: column
+        justify-content: space-between
+        h4
+          width: 60%
+          font-size: 1.2em
+          font-weight: bold
+        p
+          width: 50%
+          font-size: .8em
+        .btn-custom
+          text-decoration: unset
+          @include buttonLikeNavbarCustom(transparent, rgba(white, 0.3), white)
+          font-size: 1em
+          border: 2px solid white
+          &:hover
+            color: white
+    .helper.conseil-helper
+      width: 40%
+      align-items: start
+      justify-content: center
+      border: 2px solid $clear-blue_500
+      background-color: $clear-blue_100
+      border-radius: $border-radius-min-size
+      .helper__inner
+        width: 100%
+        height: 100%
+        padding-top: 8%
+        padding-left: 8%
+        padding-bottom: 5%
+        display: flex
+        align-items: start
+        flex-direction: column
+        justify-content: space-between
+        h3
+          font-size: 2em
+          margin-bottom: .5em
+        .btn-custom
+          text-decoration: unset
+          @include buttonLikeNavbarCustom($clear-blue_500, $clear-blue_100, white)
+
+@media (min-width: 2550px)
+  .hook-block
+    .chooser
+      .chooser_description
+        h3
+          font-size: 5em
+
+      .chooser_background
+        .buttons_container
+          .btn-custom
+            font-size: 1em
+
+@media (min-width: 1920px)
+  .hook-block
+    .finder
+      .finder_description
+        h3
+          font-size: 3em
+    .informations
+      .helper.cv-helper
+        .helper__inner
+          h4
+            font-size: 1.6em
+          p
+            font-size: 1em
+      .helper.conseil-helper
+        .helper__inner
+          h3
+            font-size: 2.5em
+@media (max-width: 1440px)
+  .hook-block
+    .chooser
+      .chooser_description
+        margin-bottom: 20%
+    .finder
+      .finder_description
+        h3
+          font-size: 1.8em
+        .buttons_container
+          .btn-custom
+            font-size: .8em
+    .informations
+      .helper.conseil-helper
+        .helper__inner
+          h3
+            font-size: 1.5em
+          .btn-custom
+            text-wrap: nowrap
+            font-size: .8em
+
+@media (max-width: $screen-sm-min)
+  .hook-block
+    padding-top: 24px
+    @include flex(column, start, center)
+    .hook_container
+      width: 100%
+      @include flex(column, start, center)
+    .finder
+      width: 100%
+      aspect-ratio: 0.85
+      overflow: hidden
+      flex-direction: column
+      .finder_description
+        width: 100%
+        h3
+          width: 70%
+          font-size: 2em
+        .buttons_container
+          margin-top: 8%
+          margin-bottom: 8%
+      .finder_background
+        width: 100%
+        height: 50%
+        margin-left: 20px
+        margin-top: unset
+        border-radius: $border-radius-min-size
+    .informations
+      width: 100%
+      margin-top: 24px
+      height: fit-content
+      @include flex(column, unset, center)
+      .helper.cv-helper
+        width: 100%
+        aspect-ratio: 1.5
+      .helper.conseil-helper
+        width: 100%
+        margin-top: 24px
+        aspect-ratio: 1.89
+    .chooser
+      width: 100%
+      margin-top: 24px
+      aspect-ratio: 0.7
+      .chooser_description
+        margin-top: 8%
+        margin-left: 8%
+        margin-bottom: unset
+        h3
+          font-size: 2em
+      .chooser_background
+        width: 100%
+        height: 100%
+        background-position-y: unset
+        .buttons_container
+          margin-left: 8%
+          margin-bottom: 8%
