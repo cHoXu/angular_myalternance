@@ -1,0 +1,124 @@
+$secondary: white
+$black_950: #1F1F1F
+$black_700: #4F4F4F
+$border-radius-min-size: 2em
+$dark-blue_50: #E5EFFF
+$clear-blue_100: #DEF6FF
+$clear-blue_500: #00C8F5
+$main-max-width: 1290px
+$border-radius-size: 4em
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: $secondary)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
+.offer
+  width: 22vw
+  padding: 3px
+  display: flex
+  aspect-ratio: 0.82
+  align-items: center
+  flex-direction: column
+  background-color: white
+  border-radius: $border-radius-min-size
+  .offer__main
+    width: 98%
+    aspect-ratio: 1/1
+    background-color: $dark-blue_50
+    border-radius: $border-radius-min-size
+    .offer__header
+      width: 100%
+      display: flex
+      aspect-ratio: 6
+      font-size: 1.5em
+      padding-top: 4%
+      padding-left: 6%
+      padding-right: 6%
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      .badge
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $clear-blue_500
+        background-color: white
+        border-radius: $border-radius-min-size
+        i
+          margin-right: 10px
+        img
+          margin-right: 5%
+      .circle-badge
+        height: 100%
+        cursor: grab
+        display: flex
+        color: $black_950
+        aspect-ratio: 1/1
+        border-radius: 50%
+        align-items: center
+        justify-content: center
+        background-color: white
+    .offer__content
+      width: 100%
+      display: flex
+      padding: 0 6%
+      margin-top: 6%
+      color: $black_950
+      align-items: start
+      aspect-ratio: 3.15
+      flex-direction: column
+      h5
+        font-size: 1em
+      h4
+        width: 100%
+        display: flex
+        font-size: 2em
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        span
+          width: 80%
+    .offer__keywords
+      gap: 2px
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+      padding: 0 10px
+      margin-top: 20px
+      align-items: center
+      flex-direction: row
+      justify-content: start
+  .offer__footer
+    width: 95%
+    display: flex
+    aspect-ratio: 3.94
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .offer_date
+      p
+        color: $black_950
+        margin: unset
+        padding: unset
+        font-size: 1em
+        strong
+          color: $black_700
+    .btn-custom
+      text-decoration: unset
+      @include buttonLikeNavbarCustom($black_950, white, white)
+      margin: unset
+      font-size: 1em
+      padding: .7em .7em
+      &:hover
+        color: $black_950
