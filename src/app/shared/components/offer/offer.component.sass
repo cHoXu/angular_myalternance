@@ -7,6 +7,7 @@ $clear-blue_100: #DEF6FF
 $clear-blue_500: #00C8F5
 $main-max-width: 1290px
 $border-radius-size: 4em
+$screen-sm-min: 1024px
 
 @mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: $secondary)
   border: 2px solid $first-color
@@ -122,3 +123,7 @@ $border-radius-size: 4em
       padding: .7em .7em
       &:hover
         color: $black_950
+@media (max-width: $screen-sm-min)
+  .offer
+    margin-right: 20px
+    width: 100%

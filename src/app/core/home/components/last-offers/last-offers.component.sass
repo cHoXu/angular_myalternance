@@ -1,6 +1,7 @@
 $black_950: #1F1F1F
 $border-radius-size: 4em
 $border-radius-min-size: 2em
+$screen-sm-min: 1024px
 
 @mixin flex($direction: row, $justify-content: center, $align-items: center)
   display: flex
@@ -32,3 +33,12 @@ $border-radius-min-size: 2em
       font-size: 1.5em
       margin-right: 1em
       @include flex(row, space-between, center)
+
+@media (max-width: $screen-sm-min)
+  .offers_container
+    width: 100%
+    overflow: hidden
+    border-radius: unset
+    .container-title
+      align-items: start
+      flex-direction: column

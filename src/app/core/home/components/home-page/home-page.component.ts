@@ -3,6 +3,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {HookUniverseComponent} from "../hook-universe/hook-universe.component";
 import {HookStudentComponent} from "../hook-student/hook-student.component";
 import {LastOffersComponent} from "../last-offers/last-offers.component";
+import {StudentSubscriptionBlockComponent} from "../student-subscription-block/student-subscription-block.component";
+import {HookCompanyComponent} from "../hook-company/hook-company.component";
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +13,9 @@ import {LastOffersComponent} from "../last-offers/last-offers.component";
     MatGridListModule,
     HookUniverseComponent,
     HookStudentComponent,
-    LastOffersComponent
+    LastOffersComponent,
+    StudentSubscriptionBlockComponent,
+    HookCompanyComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.sass'

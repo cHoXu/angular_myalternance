@@ -1,0 +1,94 @@
+$main-max-width: 1290px
+$clear-blue_100: #DEF6FF
+$black_950: #1F1F1F
+$border-radius-min-size: 2em
+$secondary: white
+$border-radius-size: 4em
+$screen-sm-min: 1024px
+
+.company_subscription
+  width: 100%
+  display: flex
+  margin: 26px auto
+  aspect-ratio: 2.11
+  align-items: center
+  flex-direction: column
+  background-color: $clear-blue_100
+  border-radius: $border-radius-min-size
+  .company_subscription__header
+    width: 100%
+    aspect-ratio: 5.5
+    background-size: cover
+    border-top-left-radius: $border-radius-min-size
+    border-top-right-radius: $border-radius-min-size
+    background-image: url("/images/landing-page/compagny-subscription-background.png")
+  .company_subscription__content
+    width: 90%
+    display: flex
+    margin-top: 2%
+    color: $black_950
+    aspect-ratio: 3.57
+    align-items: center
+    flex-direction: column
+    p
+      margin: unset
+      padding: unset
+      font-size: 2em
+    h3
+      font-size: 4em
+      margin-top: 1%
+      margin-bottom: 3%
+      font-weight: bold
+      text-align: center
+    h5
+      font-size: 1.5em
+      text-align: center
+    .buttons_container
+      margin-top: 5%
+      .btn-custom
+        transition: 0.3s
+        color: $secondary
+        padding: .9em 2em
+        margin-right: .5em
+        text-decoration: none
+        background-color: $black_950
+        border: 2px solid $black_950
+        border-radius: $border-radius-size
+        i
+          transition: .5s
+          margin-left: .5em
+        &:hover
+          border-color: rgba($black_950, 0.6)
+          background-color: rgba($black_950, 0.6)
+          i
+            margin-left: 1em
+      .btn-custom.transparent
+        color: $black_950
+        border-color: $black_950
+        background-color: transparent
+        &:hover
+          color: $secondary
+          background-color: rgba($black_950, 0.6)
+
+@media (max-width: $screen-sm-min)
+  .company_subscription
+    aspect-ratio: 0.62
+    .company_subscription__header
+      aspect-ratio: 1.5
+    .company_subscription__content
+      width: 100%
+      padding: 16px
+      height: fit-content
+      p
+        font-size: 1.5em
+      h3
+        font-size: 1.5em
+        text-align: center
+      h5
+        font-size: 1em
+    .buttons_container
+      gap: 12px
+      display: flex
+      align-items: center
+      flex-direction: column
+      justify-content: unset

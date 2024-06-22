@@ -1,0 +1,171 @@
+$main-max-width: 1290px
+$clear-blue_100: #DEF6FF
+$black_950: #1F1F1F
+$border-radius-min-size: 2em
+$secondary: white
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+$border-radius-size: 4em
+$black_500: #6D6D6D
+$screen-sm-min: 1024px
+
+.user_subscription_offers
+  display: flex
+  height: 900px
+  margin: 0 auto
+  padding: 160px
+  align-items: center
+  flex-direction: column
+  width: $main-max-width
+  background-color: $clear-blue_100
+  border-radius: $border-radius-min-size
+  h2
+    width: 850px
+    font-size: 48px
+    text-align: center
+  .subscription_offer
+    gap: 30px
+    width: 1070px
+    height: 466px
+    display: flex
+    margin-top: 48px
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .paid-subscription
+      height: 100%
+      display: flex
+      align-items: start
+      flex-direction: row
+      background-color: $black_950
+      border-radius: $border-radius-min-size
+      .hook-subscription
+        width: 440px
+        height: 100%
+        display: flex
+        padding: 32px 24px
+        align-items: start
+        flex-direction: column
+        justify-content: space-between
+        .title_block
+          color: $secondary
+          h3
+            font-size: 2.2em
+            span
+              color: $clear-blue_500
+        .hook-subscription__switch
+          .switch
+            width: 256px
+            height: 40px
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            background-color: $clear-blue_100
+            border-radius: $border-radius-min-size
+            .switch_option
+              width: 50%
+              height: 100%
+              display: flex
+              cursor: pointer
+              font-size: 1.2em
+              color: $black_950
+              align-items: center
+              justify-content: center
+              border-radius: $border-radius-min-size
+            .switch_option.selected
+              color: $secondary
+              background-color: $clear-blue_500
+      .subscription-card.paid-subscription
+        color: $tertiary-text-color
+        .offer-advantage
+          color: $tertiary-text-color
+          i
+            color: $clear-blue_500
+        .buttons_container
+          margin-top: 48px
+          .btn-custom
+            transition: 0.3s
+            padding: .9em 2em
+            margin-right: .5em
+            text-decoration: none
+            color: $tertiary-text-color
+            background-color: $clear-blue_500 !important
+            border: 2px solid $clear-blue_500 !important
+            border-radius: $border-radius-size
+            &:hover
+              color: $clear-blue_500 !important
+              background-color: unset !important
+    .free-subscription
+      color: $black_950
+      background-color: $secondary
+      border-radius: $border-radius-min-size
+    .subscription-card
+      width: 300px
+      height: 100%
+      display: flex
+      align-items: start
+      padding: 32px 24px
+      flex-direction: column
+      p
+        color: $black_500
+        margin-top: 12px
+      .subscription-details
+        width: 100%
+        height: 288px
+        strong
+          font-size: 48px
+        p
+          padding: 0 0
+          font-size: 12px
+          display: flex
+          align-items: center
+          i
+            font-size: 20px
+            margin-right: .5em
+        .buttons_container
+          margin-top: 48px
+          .btn-custom
+            font-size: .9em
+            transition: 0.3s
+            color: $secondary
+            padding: .9em 2em
+            margin-right: .5em
+            text-decoration: none
+            background-color: $black_950
+            border: 2px solid $black_950
+            border-radius: $border-radius-size
+            &:hover
+              border-color: rgba($black_950, 0.6)
+              background-color: rgba($black_950, 0.6)
+
+@media (max-width: $screen-sm-min)
+  .user_subscription_offers
+    width: 100%
+    padding: 10px
+    height: fit-content
+    h2
+      width: 100%
+      font-size: 1.4em
+    .subscription_offer
+      width: 98%
+      height: fit-content
+      flex-direction: column
+      justify-content: unset
+      background-color: $black_950
+      border-radius: $border-radius-min-size
+      .paid-subscription
+        flex-direction: column
+        .hook-subscription
+          width: 100%
+          .title_block
+            h3
+              font-size: 1.2em
+              text-align: center
+          .hook-subscription__switch
+            .switch
+              margin-bottom: 24px
+        .subscription-card.paid-subscription
+          margin: auto
+      .subscription-card
+        width: 95%
