@@ -7,6 +7,7 @@ import {provideHttpClient, withFetch, withInterceptorsFromDi} from "@angular/com
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {UniverseService} from "./shared/services/universe.service";
 import {AuthService} from "./shared/services/auth.service";
+import {provideNativeDateAdapter} from "@angular/material/core";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
+    provideNativeDateAdapter(),
     provideHttpClient(withInterceptorsFromDi(), withFetch()), provideAnimationsAsync(),
   ]
 };

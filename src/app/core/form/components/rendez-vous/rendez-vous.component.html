@@ -1,0 +1,190 @@
+<div class="form-container container-fluid">
+  <h2 class="" [ngClass]="'text-' + rdv.status">{{ title | titlecase }}</h2>
+  <form class="form-block needs-validation" novalidate>
+    <div class="accordion" id="accordionForm">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseClient"
+                  aria-expanded="true"
+                  aria-controls="collapseClient">
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Icon client satisfait"
+              fontIcon="sentiment_satisfied" />
+
+            {{ rdv.client.person.username }}
+          </button>
+        </h2>
+        <div id="collapseClient"
+             class="accordion-collapse collapse show"
+             data-bs-parent="#accordionForm">
+          <div class="accordion-body">
+            <!-- Debut Accordeont in -->
+
+            <div class="accordion" id="accordionClientEmail">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseClientEmailForm"
+                          aria-expanded="true"
+                          aria-controls="collapseClientEmailForm">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Icon paramètres téléphone"
+                      fontIcon="email" />
+                    Email
+                  </button>
+                </h2>
+                <div id="collapseClientEmailForm"
+                     class="accordion-collapse collapse show"
+                     data-bs-parent="#accordionClientEmail">
+                  <div class="accordion-body">
+
+                    <!-- EMAIL -->
+                      <div class="form-floating mb-3">
+                        <input type="email"
+                               class="form-control"
+                               id="emailInput"
+                               value="{{ rdv.client.person.email.address }}"
+                               placeholder="username@example.com"
+                               required
+                        >
+                        <label for="emailInput">{{ rdv.client.person.email.address }}</label>
+                        <div class="valid-feedback">
+                          Ton email est valide !
+                        </div>
+                        <div class="invalid-feedback">
+                          S'il te plaît, choisis une adresse email valide.
+                        </div>
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        <input type="email"
+                               class="form-control"
+                               id="confirmEmailInput"
+                               value="{{ rdv.client.person.email.address }}"
+                               placeholder="confirme-ton@email.com"
+                               required
+                        >
+                        <label for="confirmEmailInput">Confirme ton email</label>
+                        <div class="valid-feedback">
+                          Ton adresse email correspond !
+                        </div>
+                        <div class="invalid-feedback">
+                          Ton adresse email ne correspond pas à celle que tu as renseignée précédemment.
+                        </div>
+                      </div>
+                  <!-- FIN EMAIL -->
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseClientPhoneForm"
+                          aria-expanded="false"
+                          aria-controls="collapseClientPhoneForm">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Icon paramètres téléphone"
+                      fontIcon="settings_cell" />
+                    Téléphone
+                  </button>
+                </h2>
+                <div id="collapseClientPhoneForm"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#accordionClientEmail">
+                  <div class="accordion-body">
+                    <!-- Phone -->
+                    <div class="form-floating mb-3">
+                      <input type="text"
+                             class="form-control"
+                             id="phoneClientInput"
+                             value="{{ rdv.client.person.phone.number }}"
+                             placeholder="username@example.com"
+                             required
+                      >
+                      <label for="phoneClientInput">{{ rdv.client.person.phone.number }}</label>
+                    </div>
+                    <!-- FIN Phone -->
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseClientLocationForm"
+                          aria-expanded="false"
+                          aria-controls="collapseClientLocationForm">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Icon où je suis"
+                      fontIcon="person_pin" />
+                    Adresse
+                  </button>
+                </h2>
+                <div id="collapseClientLocationForm"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#accordionClientEmail">
+                  <div class="accordion-body">
+                    <strong>This is the Location Client item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin Accordeont in -->
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePrestations"
+                  aria-expanded="false"
+                  aria-controls="collapsePrestations">
+            Prestations #2
+          </button>
+        </h2>
+        <div id="collapsePrestations"
+             class="accordion-collapse collapse"
+             data-bs-parent="#accordionForm">
+          <div class="accordion-body">
+            <strong>This is the Préstation item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLocation"
+                  aria-expanded="false"
+                  aria-controls="collapseLocation">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapseLocation"
+             class="accordion-collapse collapse"
+             data-bs-parent="#accordionForm">
+          <div class="accordion-body">
+            <strong>This is the Location item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

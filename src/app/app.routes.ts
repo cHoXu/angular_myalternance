@@ -5,5 +5,6 @@ export const routes: Routes = [
   { path: 'error', loadChildren: () => import('./error/error.module').then(m => m.ErrorModule) },
   { path: 'auth' , loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   { path: 'blog' , loadChildren: () => import('./core/blog/blog.module').then(m => m.BlogModule)},
+  { path: 'formulaire' , loadChildren: () => import('./core/form/form.module').then(m => m.FormModule)},
   { path: '**', redirectTo: 'error' }
 ];
