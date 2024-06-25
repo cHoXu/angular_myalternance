@@ -1,0 +1,26 @@
+<form [formGroup]="formGroup">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseClientEmailForm"
+              aria-expanded="true"
+              aria-controls="collapseClientEmailForm">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Icon lettre d'email"
+          fontIcon="email" />
+
+        <div> {{ (emailInForm.length > 0) ? emailInForm : "" }}</div>
+      </button>
+    </h2>
+    <div id="collapseClientEmailForm"
+         class="accordion-collapse collapse show"
+         data-bs-parent="#accordionClientEmail">
+      <div class="accordion-body">
+        <app-input-email-form [formGroup]="formGroup" [email]="email" />
+      </div>
+    </div>
+  </div>
+</form>

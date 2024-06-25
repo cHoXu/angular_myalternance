@@ -17,6 +17,9 @@ import { MatIconModule} from "@angular/material/icon";
 import {NgClass, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {
+  AccordionEmailComponent
+} from "../../../../shared/accordion/item/components/accordion-email/accordion-email.component";
 
 @Component({
   selector: 'app-rendez-vous',
@@ -28,7 +31,8 @@ import {MatInputModule} from "@angular/material/input";
     NgClass,
     UpperCasePipe,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AccordionEmailComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './rendez-vous.component.html',
@@ -63,12 +67,13 @@ export class RendezVousComponent implements OnInit {
           'john.doe',
           'Doe',
           'John',
-          new EmailModel(1,'john@example.com'),
+          new EmailModel('john@example.com'),
           new PhoneModel(1, '33', '1234567890'),
           new LocationModel(1,
             'Chez moi',
             new AddressModel(1,
               'Paris',
+              '21op4',
               '4',
               'rue de la République',
               'France',
@@ -93,8 +98,9 @@ export class RendezVousComponent implements OnInit {
             "Mettez toutes les chances de votre côté en passant à l’abonnement Premium.",
           ),
           new LocationModel(2, "En déplacement",
-            new AddressModel(1,
+            new AddressModel(2,
               'Paris',
+              "tr45jh",
               '1',
               'Boulevard Haussmann',
               'France',
@@ -129,8 +135,9 @@ export class RendezVousComponent implements OnInit {
             "Mettez toutes les chances de votre côté en passant à l’abonnement Premium.",
           ),
           new LocationModel(2, "Domicile",
-            new AddressModel(2,
+            new AddressModel(3,
               'Paris',
+              "54j2",
               '8',
               'Avenue Victoria',
               'France',

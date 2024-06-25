@@ -6,6 +6,7 @@ import {LastOffersComponent} from "../last-offers/last-offers.component";
 import {StudentSubscriptionBlockComponent} from "../student-subscription-block/student-subscription-block.component";
 import {HookCompanyComponent} from "../hook-company/hook-company.component";
 import {ButtonLoginComponent} from "../../../../shared/api/meta/components/button-login/button-login.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-home-page',
@@ -17,7 +18,8 @@ import {ButtonLoginComponent} from "../../../../shared/api/meta/components/butto
     LastOffersComponent,
     StudentSubscriptionBlockComponent,
     HookCompanyComponent,
-    ButtonLoginComponent
+    ButtonLoginComponent,
+    ReactiveFormsModule
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.sass'

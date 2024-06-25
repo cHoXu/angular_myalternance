@@ -1,6 +1,5 @@
 <div class="form-container container-fluid">
   <h2 class="" [ngClass]="'text-' + rdv.status">{{ title | titlecase }}</h2>
-  <form class="form-block needs-validation" novalidate>
     <div class="accordion" id="accordionForm">
       <div class="accordion-item">
         <h2 class="accordion-header">
@@ -23,68 +22,10 @@
              class="accordion-collapse collapse show"
              data-bs-parent="#accordionForm">
           <div class="accordion-body">
-            <!-- Debut Accordeont in -->
 
+            <!-- Debut Accordeon  -->
             <div class="accordion" id="accordionClientEmail">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseClientEmailForm"
-                          aria-expanded="true"
-                          aria-controls="collapseClientEmailForm">
-                    <mat-icon
-                      aria-hidden="false"
-                      aria-label="Icon paramètres téléphone"
-                      fontIcon="email" />
-                    Email
-                  </button>
-                </h2>
-                <div id="collapseClientEmailForm"
-                     class="accordion-collapse collapse show"
-                     data-bs-parent="#accordionClientEmail">
-                  <div class="accordion-body">
-
-                    <!-- EMAIL -->
-                      <div class="form-floating mb-3">
-                        <input type="email"
-                               class="form-control"
-                               id="emailInput"
-                               value="{{ rdv.client.person.email.address }}"
-                               placeholder="username@example.com"
-                               required
-                        >
-                        <label for="emailInput">{{ rdv.client.person.email.address }}</label>
-                        <div class="valid-feedback">
-                          Ton email est valide !
-                        </div>
-                        <div class="invalid-feedback">
-                          S'il te plaît, choisis une adresse email valide.
-                        </div>
-                      </div>
-
-                      <div class="form-floating mb-3">
-                        <input type="email"
-                               class="form-control"
-                               id="confirmEmailInput"
-                               value="{{ rdv.client.person.email.address }}"
-                               placeholder="confirme-ton@email.com"
-                               required
-                        >
-                        <label for="confirmEmailInput">Confirme ton email</label>
-                        <div class="valid-feedback">
-                          Ton adresse email correspond !
-                        </div>
-                        <div class="invalid-feedback">
-                          Ton adresse email ne correspond pas à celle que tu as renseignée précédemment.
-                        </div>
-                      </div>
-                  <!-- FIN EMAIL -->
-
-                  </div>
-                </div>
-              </div>
+              <app-accordion-email [email]="rdv.client.person.email"></app-accordion-email>
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed"
@@ -138,12 +79,96 @@
                      class="accordion-collapse collapse"
                      data-bs-parent="#accordionClientEmail">
                   <div class="accordion-body">
-                    <strong>This is the Location Client item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <!-- LOCATION -->
+                    <div class="form-floating mb-3">
+                      <input name="clientLocationTitle" type="text"
+                             class="form-control is-valid"
+                             id="locationNameClientInput"
+                             value="{{ rdv.client.person.location.title }}"
+                             placeholder="Ma résidence"
+                      >
+                      <label for="locationNameClientInput">Nom de l'adresse</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input name="clientAddressStreet"
+                             type="text"
+                             class="form-control is-valid"
+                             id="adresseStreetClientInput"
+                             value="{{ rdv.client.person.location.address.street }}"
+                             placeholder="Av. des Champs-Élysées"
+                      >
+                      <label for="adresseStreetClientInput">Rue et numéro</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input name="clientAddressCity"
+                             type="text"
+                             class="form-control is-valid"
+                             id="adresseCityClientInput"
+                             value="{{ rdv.client.person.location.address.city }}"
+                             placeholder="Paris"
+                      >
+                      <label for="adresseStreetClientInput">Ville</label>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-floating mb-3">
+                          <input name="clientAppartementAdresse"
+                                 type="text"
+                                 class="form-control is-valid"
+                                 id="adresseAppartementClientInput"
+                                 value="{{ rdv.client.person.location.address.apartment }}"
+                                 placeholder="104"
+                          >
+                          <label for="adresseAppartementClientInput">Appartement</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-floating mb-3">
+                          <input name="clientCodeAdresse"
+                                 type="text"
+                                 class="form-control is-valid"
+                                 id="adresseCodeClientInput"
+                                 value="{{ rdv.client.person.location.address.code }}"
+                                 placeholder="104"
+                          >
+                          <label for="adresseCodeClientInput">Code</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-floating mb-3">
+                          <input name="clientAppartementAdresse"
+                                 type="text"
+                                 class="form-control is-valid"
+                                 id="adresseFloorClientInput"
+                                 value="{{ rdv.client.person.location.address.floor }}"
+                                 placeholder="4"
+                          >
+                          <label for="adresseFloorClientInput">&Eacute;tage</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-floating mb-3">
+                          <input name="clientCodeAdresse"
+                                 type="text"
+                                 class="form-control is-valid"
+                                 id="adressePostalCodeClientInput"
+                                 value="{{ rdv.client.person.location.address.codePostal }}"
+                                 placeholder="104"
+                          >
+                          <label for="adressePostalCodeClientInput">Code Postal</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FIN LOCATION -->
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Fin Accordeont in -->
+            <!-- Fin Accordeont  -->
           </div>
         </div>
       </div>
@@ -186,5 +211,4 @@
         </div>
       </div>
     </div>
-  </form>
 </div>
