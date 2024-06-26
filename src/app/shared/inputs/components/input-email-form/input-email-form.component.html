@@ -1,7 +1,8 @@
 <div [formGroup]="formGroup"
      class="form-floating mb-3"
->
-  <input type="email"
+     *ngIf="!isValidEmail() || isEmailUpdatable" >
+  <input
+    type="email"
          formControlName="email"
          class="form-control"
          id="emailInput"
@@ -17,4 +18,16 @@
 
   <div class="valid-feedback" *ngIf="isValidEmail()">{{ validMessage }}</div>
   <div class="invalid-feedback" *ngIf="!isValidEmail()">{{ invalidMessage }}</div>
+</div>
+
+<div *ngIf="isValidEmail() && !isEmailUpdatable" class="form-floating mb-3">
+  <p (click)="onUpdateEmail()" class="d-inline-flex">
+    Ton email: <span class="text-primary">{{ this.emailAddress }}</span>
+    <i style="color: red"><mat-icon
+      aria-hidden="false"
+      aria-label="Icon supprimer"
+      fontIcon="clear"
+    />
+    </i>
+  </p>
 </div>

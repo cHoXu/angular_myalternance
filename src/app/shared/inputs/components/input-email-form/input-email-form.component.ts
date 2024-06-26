@@ -1,8 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {AsyncPipe, NgClass, NgIf} from "@angular/common";
+import {AsyncPipe, NgClass, NgIf, NgStyle} from "@angular/common";
 import {Observable} from "rxjs";
 import {EmailModel} from "../../../model/email.model";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-input-email-form',
@@ -11,16 +12,20 @@ import {EmailModel} from "../../../model/email.model";
     ReactiveFormsModule,
     NgClass,
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    MatIcon,
+    NgStyle
   ],
   templateUrl: './input-email-form.component.html',
   styleUrl: './input-email-form.component.sass'
 })
 export class InputEmailFormComponent implements OnInit, OnDestroy {
-  placeholder: string = "Ton adresse email: ";
   @Input() formGroup:FormGroup
   @Input() email!: EmailModel;
+
   emailAddress !: string;
+  isEmailUpdatable: boolean = false;
+  placeholder: string = "Ton adresse email: ";
   validMessage: string = "Ton email est valide ! 🎉";
   invalidMessage: string = "S'il te plaît, choisis une adresse email valide ! 😢";
 
@@ -48,6 +53,7 @@ export class InputEmailFormComponent implements OnInit, OnDestroy {
         if (!address.email || address.email === "") {
           this.placeholder = "Ton adresse email: ";
         }
+        this.isEmailUpdatable = false;
       }
     );
   }
@@ -56,6 +62,10 @@ export class InputEmailFormComponent implements OnInit, OnDestroy {
     const regex = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
 
     return regex.test(this.emailAddress);
+  }
+
+  public onUpdateEmail() {
+    this.isEmailUpdatable = true
   }
 
 }

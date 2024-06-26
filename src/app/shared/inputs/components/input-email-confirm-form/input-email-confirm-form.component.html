@@ -1,0 +1,21 @@
+<div [formGroup]="formGroup"
+     class="form-floating mb-3"
+     *ngIf="!isValidEmail()" >
+  <input
+    type="email"
+    formControlName="emailConfirm"
+    class="form-control"
+    id="emailInput"
+    placeholder="{{ placeholder }}"
+    required
+    [ngClass]="{
+           'is-invalid': !isValidEmail(),
+           'is-valid': isValidEmail()
+           }"
+
+  >
+  <label for="emailInput">{{ placeholder }}</label>
+
+  <div class="valid-feedback" *ngIf="isValidEmail()">{{ validMessage }}</div>
+  <div class="invalid-feedback" *ngIf="!isValidEmail()">{{ invalidMessage }}</div>
+</div>
