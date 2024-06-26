@@ -19,7 +19,13 @@
          class="accordion-collapse collapse show"
          data-bs-parent="#accordionClientEmail">
       <div class="accordion-body">
-        <app-input-email-form [formGroup]="formGroup" [email]="email" />
+        <app-input-email-form #emailInputMaster
+          [formGroup]="formGroup"
+          [email]="email" />
+
+        <app-input-email-confirm-form
+          [formGroup]="formGroup"
+          [email]="email"/>
       </div>
     </div>
   </div>

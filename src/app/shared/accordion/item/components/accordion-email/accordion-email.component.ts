@@ -5,6 +5,9 @@ import {NgIf} from "@angular/common";
 import {InputEmailFormComponent} from "../../../../inputs/components/input-email-form/input-email-form.component";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
+import {
+  InputEmailConfirmFormComponent
+} from "../../../../inputs/components/input-email-confirm-form/input-email-confirm-form.component";
 
 @Component({
   selector: 'app-accordion-email',
@@ -13,7 +16,8 @@ import {Observable} from "rxjs";
     MatIcon,
     NgIf,
     InputEmailFormComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputEmailConfirmFormComponent
   ],
   templateUrl: './accordion-email.component.html',
   styleUrl: './accordion-email.component.sass'
@@ -42,7 +46,7 @@ export class AccordionEmailComponent implements OnInit {
 
     this.formGroup = this.formBuilder.group(({
       email: [[], [Validators.required, Validators.email]],
-      confirmEmail: [[], [Validators.required, Validators.email]]
+      emailConfirm: [[], [Validators.required, Validators.email]]
     }));
   }
 
