@@ -16,7 +16,7 @@ import {MatIcon} from "@angular/material/icon";
 export class AdminHeaderComponent {
   universe!: string;
   user_avatar_url: string ='url(/images/user/avatar/marina-navarro.png)';
-  user_cover_url: string ='url(images/admin/student/admin-student-mobile-background.png)';
+  user_cover_url: string ='url(/images/admin/student/admin-student-mobile-background.png)';
 
   constructor(universeService: UniverseService) {
     this.universe = universeService.getUniverse();
