@@ -1,0 +1,115 @@
+$secondary: white
+$clear-blue_300: #75E8FF
+$clear-blue_400: #2CDDFF
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: $secondary)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
+.user-infos
+  width: 20vw
+  display: flex
+  align-items: center
+  height: fit-content
+  flex-direction: column
+  background-color: $secondary
+  border: 1px solid $clear-blue_300
+  border-radius: $border-radius-min-size
+  .user-profil
+    .avatar
+      width: 11em
+      height: 11em
+      margin-top: 1.5em
+      img
+        position: absolute
+        border-radius: 50%
+        background-size: cover
+        background-position: center
+      .photo
+        width: 2.5em
+        height: 2.5em
+        display: flex
+        margin-top: 7.1875em
+        margin-left: 7.1875em
+        position: absolute
+        border-radius: 50%
+        align-items: center
+        justify-content: center
+        border: 0.125em solid white
+        background-color: $clear-blue_500
+        i
+          font-size: 1.5625em
+          color: $tertiary-text-color
+    .diplome
+      color: $clear-blue_400
+  .list-group
+    width: 100%
+    margin-top: 2em
+    margin-bottom: 2em
+    .list-group-item
+      height: 4em
+      display: flex
+      flex-direction: row
+      align-items: center
+      border-left: unset
+      border-right: unset
+      border-color: $clear-blue_300
+      justify-content: space-between
+      h5
+        margin: unset
+        padding: unset
+      span
+        font-size: 1.25em
+  .share-profil
+    gap: 0.75em
+    width: 100%
+    margin-bottom: 1.5em
+    @include flex(column, center, center)
+    .btn-custom
+      @include buttonLikeNavbarCustom($clear-blue_500, $tertiary-text-color)
+      width: 90%
+      border-radius: 0.3125em
+    .profil-link-container
+      width: 90%
+      border-radius: 0.3125em
+      color: $clear-blue_500
+      border: 0.0625em solid $clear-blue_500
+      @include flex(row, space-between, center)
+      span
+        width: 90%
+        height: 100%
+        padding: 0.75em
+        border-right: 0.0625em solid $clear-blue_500
+      .icon-container
+        width: 10%
+        cursor: grab
+        height: 100%
+        padding: 0.75em
+        @include flex(row, center, center)
+        i
+          font-size: 1.5em
+        &:hover
+          background-color: $clear-blue_500
+          i
+            color: $tertiary-text-color

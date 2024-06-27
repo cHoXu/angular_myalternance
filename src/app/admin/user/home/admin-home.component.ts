@@ -2,13 +2,15 @@ import {Component} from '@angular/core';
 import {AdminHeaderComponent} from "../components/admin-header/admin-header.component";
 import {AdminMenuComponent} from "../components/admin-menu/admin-menu.component";
 import {UniverseService} from "../../../shared/services/universe.service";
+import {AdminMainComponent} from "../components/admin-main/admin-main.component";
 
 @Component({
   selector: 'app-home-admin-user',
   standalone: true,
   imports: [
     AdminHeaderComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    AdminMainComponent
   ],
   templateUrl: './admin-home.component.html',
   styleUrl: './home.component.sass'
