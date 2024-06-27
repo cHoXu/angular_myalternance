@@ -1,0 +1,60 @@
+<div class="menu-container">
+  <div class="logo">
+    <a href="/"><img  src="/images/logo.png" alt="Logo de MyAlternance"></a>
+  </div>
+
+  <div class="return">
+    <a (click)="goBack()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Icon fleche retour à la page précédente"
+        fontIcon="arrow_back" />
+      Retour
+    </a>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item active">
+      <a href="#">
+        <i class="fa-regular fa-user"></i>
+        Mon profil
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="#">
+        <i class="fa-regular fa-bookmark"></i>
+        Offres enregistrées
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="#">
+        <i class="fa-solid fa-chart-pie"></i>
+        tableau de bord
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="#">
+        <img src="/images/icon/website-icon.png" alt="Icon de site web">
+        Mon abonnement
+      </a>
+    </li>
+    <li class="list-group-item apply">
+      <a href="#">
+        <i class="fa-regular fa-square-plus"></i>
+        Postuler une offre
+      </a>
+    </li>
+    <li class="list-group-item remaining-block">
+      <div class="remaining-application">
+        <span>Il vous reste</span>
+        <strong>3 candidatures</strong>
+        <button class="btn-custom" href="#">Passer premium</button>
+      </div>
+    </li>
+    <li class="list-group-item logout">
+      <a href="#">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Déconnexion
+      </a>
+    </li>
+  </ul>
+</div>

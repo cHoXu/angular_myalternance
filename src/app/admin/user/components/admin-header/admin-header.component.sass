@@ -1,0 +1,41 @@
+$black_950: #1F1F1F
+.header-container
+  border: 2px solid green
+  width: 80vw
+  height: 10vh
+  padding: 0 10%
+  color: $black_950
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+  .dropdown
+    .btn-custom
+      display: flex
+      align-items: center
+      flex-direction: row
+      border: unset
+      padding: 8px 16px
+      color: $black_950
+      text-decoration: none
+      border: 1px solid red
+      .avatar
+        width: 40px
+        height: 40px
+        margin-right: 8px
+        border-radius: 50%
+        background-size: cover
+        background-position: center
+      i
+        margin-left: 8px
+    .dropdown-menu
+      margin-top: -2px
+      width: 100%
+      border: unset
+    .btn-custom
+      z-index: 1000
+    .dropdown-menu
+      z-index: 900
+    .btn-custom.show , .dropdown-menu.show
+      box-shadow: 0 8px 16px 0 rgba(black,0.2)
