@@ -1,0 +1,31 @@
+<div class="card-formation" >
+  <div class="formation-description">
+    <div class="formation-title-type">
+      <h4>
+        {{ formation.title }}
+      </h4>
+      <div class="formation-type">
+        <i class="fa-solid fa-award"></i>
+        <span *ngIf="formation.isAlternating">Formation en alternance</span>
+        <span *ngIf="!formation.isAlternating">Formation en présentiel</span>
+      </div>
+    </div>
+    <h4 class="formation-company">
+      ESADD DIJON
+    </h4>
+  </div>
+  <div class="formation-more">
+    <div class="formation-address-distance">
+      <h5>
+        90 Bd des Nations Unies, Toison d’Or, 21000 Dijon
+      </h5>
+      <h5 class="formation-distance">
+        0.70 km du lieu de recherche
+      </h5>
+    </div>
+    <button class="btn-custom">
+      En savoir plus
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+$clear-blue_100: #DEF6FF
+$clear-blue_500: #00C8F5
+$success_100: #DCFCE8
+$success_500: #22C55E
+$black_700: #4F4F4F
+
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: white)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
+.card-formation
+  width: 100%
+  padding: 24px 30px
+  border: 1px solid $clear-blue_500
+  .formation-description
+    margin-bottom: 12px
+    .formation-title-type
+      @include flex(row, space-between, start)
+      .formation-type
+        text-wrap: nowrap
+        padding: 4px 12px
+        font-weight: bold
+        color: $success_500
+        background-color: $success_100
+        border-radius: $border-radius-min-size
+        @include flex(row, space-between, center)
+        i
+          margin-right: 10px
+          font-size: 24px
+    .formation-company
+      color: $black_700
+  .formation-more
+    @include flex(row, space-between, end)
+    .formation-address-distance
+      .formation-distance
+        color: $black_700
+    .btn-custom
+      @include buttonLikeNavbarCustom($clear-blue_500, $clear-blue_100)

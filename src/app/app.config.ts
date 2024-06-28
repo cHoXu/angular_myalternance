@@ -9,12 +9,14 @@ import {UniverseService} from "./shared/services/universe.service";
 import {AuthService} from "./shared/services/auth.service";
 import {provideNativeDateAdapter} from "@angular/material/core";
 import {AdminRouteService} from "./admin/services/admin-route.service";
+import {FormationService} from "./core/formation/services/formation.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     UniverseService,
     AuthService,
     AdminRouteService,
+    FormationService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

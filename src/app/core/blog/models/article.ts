@@ -1,5 +1,5 @@
-import {Link} from "./link";
 import {Image} from "./image";
+import {Link} from "../../../shared/model/link";
 
 export class Article {
   constructor(

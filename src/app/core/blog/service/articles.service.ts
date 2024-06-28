@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Article} from "../models/article";
-import {Link} from "../models/link";
 import {Image} from "../models/image";
+import {Link} from "../../../shared/model/link";
 
 @Injectable({
   providedIn: 'root'
