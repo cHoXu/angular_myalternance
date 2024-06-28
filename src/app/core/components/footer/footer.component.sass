@@ -1,0 +1,159 @@
+$secondary: white
+
+$screen-sm-min: 1024px
+$dark-blue_500: #00C8F5
+$dark-blue_940: #010A7A
+$dark-blue_950: #01013B
+
+$clear-blue_500: #00C8F5
+
+$tertiary: $clear-blue_500
+$tertiary-text-color: white
+
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: white)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
+@mixin footerLink()
+  font-size: 1em
+  transition: .8s
+  text-decoration: none
+  color: $tertiary-text-color
+  &:hover
+    color: $tertiary
+    text-decoration: underline
+
+footer
+  width: 100%
+  display: flex
+  margin-top: 16px
+  justify-content: center
+  background: radial-gradient(383px 383px, $dark-blue_940, $dark-blue_950)
+  .footer_container
+    display: flex
+    margin-top: 8em
+    margin-bottom: 8em
+    flex-direction: column
+    width: 100%
+    color: $tertiary-text-color
+    .footer_first
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      .footer_first_elem
+        width: 300px
+        height: 100%
+        h4
+          margin-bottom: 1em
+        ul
+          margin: 0
+          padding: 0
+          width: 246px
+          list-style-type: none
+          li
+            margin-bottom: .7em
+            a
+              @include footerLink()
+      .footer_newsletter
+        padding: 1em
+        border-radius: $border-radius-min-size
+        background-color: rgba($dark-blue_940, 0.3)
+        .input-group
+          a
+            text-decoration: none
+            color: $tertiary-text-color
+            background-color: $dark-blue_500
+            &:hover
+              i
+                transform: scale(1.2)
+        p
+          margin-top: 1em
+          margin-bottom: 1em
+        .btn-custom
+          font-size: .8em
+          text-decoration: unset
+          @include buttonLikeNavbarCustom($dark-blue_500, $dark-blue_950, $secondary)
+
+    hr
+      width: 100%
+      color: $secondary
+      margin-top: 2em
+      margin-bottom: 2em
+    .footer_second
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      .logo__container
+        a
+          text-decoration: none
+          img
+            height: 24px
+      .legal-notices
+        width: 552px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        a
+          @include footerLink()
+      .socials
+        width: 135px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        a
+          @include footerLink()
+          width: 35px
+          height: 35px
+          display: flex
+          border-radius: 50%
+          align-items: center
+          justify-content: center
+          border: 1px solid $tertiary-text-color
+          &:hover
+            color: $tertiary
+            text-decoration: none
+            border: 1px solid $tertiary
+// Mobile version
+@media (max-width: $screen-sm-min)
+  footer
+    .footer_container
+      flex-direction: column
+      .footer_first
+        flex-direction: column
+        .footer_first_elem
+          margin-bottom: 2em
+          h4
+            font-size: 1.5em
+            font-weight: bold
+      .footer_second
+        flex-direction: column
+        .logo__container
+          margin-bottom: 2em
+        .legal-notices
+          gap: 12px
+          margin-bottom: 2em
+          width: fit-content
+          align-items: center
+          flex-direction: column
+        .socials
+          width: fit-content
+          margin-bottom: 2em
+          a
+            &:nth-child(2)
+              margin-left: 12px
+              margin-right: 12px

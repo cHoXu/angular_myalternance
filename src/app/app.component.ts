@@ -3,11 +3,12 @@ import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {HeaderComponent} from "./core/components/header/header.component";
 import {HeaderBlogComponent} from "./core/blog/components/header-blog/header-blog.component";
 import {NgIf} from "@angular/common";
+import {FooterComponent} from "./core/components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HeaderBlogComponent, NgIf],
+  imports: [RouterOutlet, HeaderComponent, HeaderBlogComponent, NgIf, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
