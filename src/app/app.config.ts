@@ -8,11 +8,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {UniverseService} from "./shared/services/universe.service";
 import {AuthService} from "./shared/services/auth.service";
 import {provideNativeDateAdapter} from "@angular/material/core";
+import {AdminRouteService} from "./admin/services/admin-route.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     UniverseService,
     AuthService,
+    AdminRouteService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

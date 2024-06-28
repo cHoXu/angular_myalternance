@@ -1,0 +1,109 @@
+$black_100: #E7E7E7
+$black_950: #1F1F1F
+$clear-blue_500: #00C8F5
+
+$border-radius-size: 4em
+$tertiary-text-color: white
+
+@mixin form-block($width: 410px, $border-radius-size: 2em)
+  width: $width
+  .input-group-custom
+    width: 100%
+    display: flex
+    padding-left: 10px
+    padding-right: 10px
+    margin-bottom: 20px
+    flex-direction: row
+    align-items: center
+    justify-content: start
+    border: 2px solid $black_950
+    border-radius: $border-radius-size
+    .input-group-text-custom
+      margin: 10px
+    input
+      border: unset
+      width: 80%
+      &:focus
+        outline: unset
+  .input-group-custom:focus-within
+    border: 2px solid $clear-blue_500
+  .form-options
+    width: 100%
+    display: flex
+    margin-bottom: 24px
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .remember-me
+      display: flex
+      align-items: center
+      flex-direction: row
+      justify-content: space-between
+      img
+        width: 20px
+        height: 20px
+        margin-right: 10px
+  // Pour l'inscription
+  .name-fields
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .input-group-custom
+      width: 49%
+      padding-top: 10px
+      padding-bottom: 10px
+  .error-msg
+    display: flex
+    color: red
+    margin-bottom: 24px
+    align-items: center
+    flex-direction: row
+    justify-content: start
+    i
+      margin-right: 10px
+      font-size: 21px
+    p
+      margin: unset
+      padding: unset
+      font-size: 15px
+  .input-labelled
+    width: 100%
+    display: flex
+    align-items: start
+    flex-direction: column
+    .input-group-custom
+      width: 95%
+    label
+      font-size: 12px
+      margin-bottom: 5px
+
+
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: white)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+.form-block
+  @include form-block(90%, 5px)
+  .input-labelled
+    .btn-custom
+      @include buttonLikeNavbarCustom($black_100, $clear-blue_500, $clear-blue_500)
+      width: 95%
+      border-radius: 5px
+      border: 2px solid $clear-blue_500
+      i
+        margin-right: 8px
+        font-size: 1.5em
+  .btn-custom
+    @include buttonLikeNavbarCustom($clear-blue_500, $tertiary-text-color)
+    border-radius: 5px
+    margin-bottom: 30px

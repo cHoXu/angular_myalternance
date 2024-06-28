@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdminHomeComponent} from "./user/home/admin-home.component";
 
 const routes: Routes = [
-  {path: 'user', component: AdminHomeComponent}
+  {
+    path: 'user',
+    component: AdminHomeComponent
+  }
 ];
 
 @NgModule({

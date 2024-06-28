@@ -13,21 +13,36 @@
     </a>
   </div>
   <ul class="list-group">
-    <li class="list-group-item active">
-      <a href="#">
-        <i class="fa-regular fa-user"></i>
+    <li class="list-group-item" [ngClass]="{'active': board === 'form'}">
+      <a (click)="onChangeBoard('form')" >
+        <i>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Icon utilisateur gérer les comptes"
+            fontIcon="manage_accounts" />
+        </i>
         Mon profil
       </a>
     </li>
-    <li class="list-group-item">
-      <a href="#">
-        <i class="fa-regular fa-bookmark"></i>
+    <li class="list-group-item" [ngClass]="{'active': board === 'offers'}">
+      <a (click)="onChangeBoard('offers')" >
+        <i>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Icon bookmark"
+            fontIcon="bookmark_border" />
+        </i>
         Offres enregistrées
       </a>
     </li>
-    <li class="list-group-item">
-      <a href="#">
-        <i class="fa-solid fa-chart-pie"></i>
+    <li class="list-group-item" [ngClass]="{'active': board === 'dashboard'}">
+      <a (click)="onChangeBoard('dashboard')">
+        <i>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Icon pie"
+            fontIcon="pie_chart" />
+        </i>
         tableau de bord
       </a>
     </li>
@@ -39,7 +54,12 @@
     </li>
     <li class="list-group-item apply">
       <a href="#">
-        <i class="fa-regular fa-square-plus"></i>
+        <i>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Postuler à une offre"
+            fontIcon="add_to_photos" />
+        </i>
         Postuler une offre
       </a>
     </li>
@@ -52,7 +72,12 @@
     </li>
     <li class="list-group-item logout">
       <a href="#">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <i>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Icon de déconnexion"
+            fontIcon="logout" />
+        </i>
         Déconnexion
       </a>
     </li>

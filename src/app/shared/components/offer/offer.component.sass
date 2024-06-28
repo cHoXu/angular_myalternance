@@ -31,6 +31,7 @@ $screen-sm-min: 1024px
   align-items: center
   flex-direction: column
   background-color: white
+  border: 2px solid $black_950
   border-radius: $border-radius-min-size
   .offer__main
     width: 98%
@@ -91,12 +92,12 @@ $screen-sm-min: 1024px
         span
           width: 80%
     .offer__keywords
-      gap: 2px
+      gap: 0.125em
       width: 100%
       display: flex
       flex-wrap: wrap
-      padding: 0 10px
-      margin-top: 20px
+      padding: 0 0.625em
+      margin-top: 1.25em
       align-items: center
       flex-direction: row
       justify-content: start
@@ -125,5 +126,5 @@ $screen-sm-min: 1024px
         color: $black_950
 @media (max-width: $screen-sm-min)
   .offer
-    margin-right: 20px
+    margin-right: 1.25em
     width: 100%

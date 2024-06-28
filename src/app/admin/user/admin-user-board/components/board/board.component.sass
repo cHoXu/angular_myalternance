@@ -1,0 +1,56 @@
+$secondary: white
+$grey_100: #D9D9D9
+$black_950: #1F1F1F
+$clear-blue_300: #75E8FF
+$clear-blue_500: #00C8F5
+$border-radius-min-size: 2em
+
+@mixin switchLink($width: 378px)
+  width: $width
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .link-block
+    width: 50%
+    display: flex
+    padding-top: 24px
+    padding-bottom: 24px
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    a
+      color: $black_950
+      margin-bottom: 12px
+      text-decoration: none
+    .underline
+      width: 100%
+      height: 2px
+      background-color: $grey_100
+  .link-block:hover
+    .underline
+      background-color: $clear-blue_500
+  .link-block.active
+    .underline
+      background-color: $clear-blue_500
+
+.board-container
+  width: 50vw
+  height: 75.5vh
+  overflow: auto
+  margin-left: 5em
+  overflow-y: hidden
+  background-color: $secondary
+  border: 1px solid $clear-blue_300
+  border-radius: $border-radius-min-size
+
+.navbar
+  .switch-link
+    @include switchLink(100%)
+
+.global-content
+  width: 100%
+  height: 100%
+  overflow: auto
+  padding: 0 1.875em
+  &::-webkit-scrollbar
+    display: none

@@ -1,0 +1,29 @@
+<div class="board-container">
+  <div class="navbar">
+    <div class="switch-link">
+      <div class="link-block" [ngClass]="{'active': board === 'form'}">
+        <a (click)="onChangeBoard('form')">Mon profil</a>
+        <div class="underline"></div>
+      </div>
+      <div class="link-block" [ngClass]="{'active': board === 'offers'}">
+        <a (click)="onChangeBoard('offers')">Offres enregistrées</a>
+        <div class="underline"></div>
+      </div>
+      <div class="link-block" [ngClass]="{'active': board === 'dashboard'}">
+        <a (click)="onChangeBoard('dashboard')">Dashboard</a>
+        <div class="underline"></div>
+      </div>
+      <div class="link-block" [ngClass]="{'active': board === 'subscription'}">
+        <a (click)="onChangeBoard('subscription')">Mon abonnement</a>
+        <div class="underline"></div>
+      </div>
+    </div>
+  </div>
+  <div class="global-content">
+    <app-admin-user-form *ngIf="board === 'form'" />
+    <app-admin-user-offers *ngIf="board === 'offers'" />
+    <!--<app-board-dashboard *ngIf="board === 'dashboard'"></app-board-dashboard>
+    <app-board-subscription *ngIf="board === 'subscription'"></app-board-subscription>
+    -->
+  </div>
+</div>
