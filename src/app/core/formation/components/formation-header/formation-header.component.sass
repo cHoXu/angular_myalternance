@@ -1,0 +1,32 @@
+$screen-sm-min: 1024px
+
+.header
+  width: 100%
+  aspect-ratio: 3.2
+  display: flex
+  align-items: end
+  justify-content: start
+  background-size: cover
+  background-position: center
+  background-image: url('/images/formation/formation-background.png')
+  .header-content
+    width: 90%
+    color: white
+    margin: 80px auto
+    text-shadow: black 0.1em 0.1em 0.2em
+    h1
+      font-size: 3em
+      font-weight: bold
+    p
+      font-size: 1.5em
+    nav ol
+      color: white
+      li a
+        color: white
+      li.active
+        color: white
+        font-weight: bold
+
+@media (max-width: $screen-sm-min)
+  .header
+    background-image: url('/images/formation/formation-background-mobile.png')
