@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Keyword} from "../../model/keyword";
 
 @Component({
   selector: 'app-keyword-badge',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './keyword-badge.component.sass'
 })
 export class KeywordBadgeComponent {
-
+ @Input() keyword!: Keyword;
 }

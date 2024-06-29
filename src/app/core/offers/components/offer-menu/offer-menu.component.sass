@@ -1,0 +1,70 @@
+$secondary: white
+$dark-blue_950: #01013B
+$clear-blue_500: #00C8F5
+$tertiary-text-color: white
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+.menu-offer
+  width: 18.75em
+  height: 100%
+  display: flex
+  margin-right: 1.25em
+  align-items: start
+  flex-direction: column
+  justify-content: start
+  .hook
+    width: 100%
+    height: 12.5em
+    text-align: center
+    margin-bottom: 1.5em
+    color: $tertiary-text-color
+    @include flex(column, center, center)
+    border-radius: $border-radius-min-size
+    .hook-effect
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.5)
+      @include flex(column, center, center)
+      border-radius: $border-radius-min-size
+    .hook-effect.offers-available
+      background-color: $dark-blue_950
+    .btn-custom
+      width: 90%
+      height: 2.625em
+      padding: 0.75em
+      text-wrap: nowrap
+      border-radius: 0.313em
+      color: $clear-blue_500
+      background-color: $secondary
+      @include flex(row, center, center)
+      span
+        margin-left: 0.75em
+        margin-right: 0.75em
+  .hook.become-premium
+    background-size: cover
+    background-image: url("/images/offer/offer-hook-background.png")
+  .offers-available
+    background-size: contain
+    background-repeat: no-repeat
+    background-position-x: center
+    background-image: url("/images/offer/offer-available-hook-background.png")
+    .number-of-offers
+      margin-bottom: 1.5em
+      h2, h2
+        margin: unset
+        padding: unset
+      h5
+        font-size: 0.875em
+        font-weight: normal
+    .time-offer-unlock
+      h3, h6
+        margin: unset
+        padding: unset
+      h6
+        font-size: 0.625em

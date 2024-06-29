@@ -5,6 +5,7 @@ import {HomePageComponent} from "./home/components/home-page/home-page.component
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'blog' , loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)},
+  { path: 'alternance' , loadChildren: () => import('./offers/offers.module').then(m => m.OffersModule)},
   { path: 'formations' , loadChildren: () => import('./formation/formation.module').then(m => m.FormationModule)},
 ];
 

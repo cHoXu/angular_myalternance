@@ -10,6 +10,7 @@ import {AuthService} from "./shared/services/auth.service";
 import {provideNativeDateAdapter} from "@angular/material/core";
 import {AdminRouteService} from "./admin/services/admin-route.service";
 import {FormationService} from "./core/formation/services/formation.service";
+import {OfferService} from "./core/formation/services/offer.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     AuthService,
     AdminRouteService,
     FormationService,
+    OfferService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

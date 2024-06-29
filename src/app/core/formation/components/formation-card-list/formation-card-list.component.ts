@@ -17,6 +17,6 @@ import {FormationCardComponent} from "../formation-card/formation-card.component
 export class FormationCardListComponent {
   formations!:Formation[];
   constructor(private formationService: FormationService) {
-    this.formations = this.formationService.formations;
+    this.formations = this.formationService.findFormations();
   }
 }

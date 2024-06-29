@@ -2,8 +2,8 @@
   <div class="offer__main">
     <div class="offer__header">
       <span class="badge">
-        <img src="/images/icon/company-icon_clearBlue500.png" alt="company-icon" width="14">
-        Exclusivité
+        <img src="{{ offer.publishedBy.logo }}" alt="company-icon" width="14">
+        {{ offer.publishedBy.name }}
       </span>
       <i class="circle-badge">
         <mat-icon
@@ -13,23 +13,22 @@
       </i>
     </div>
     <div class="offer__content">
-      <h5>Google</h5>
+      <h5>{{ offer.company | titlecase }}</h5>
       <h4>
-        <span>Motion Designer en Alternance</span>
-        <img src="/images/icon/google-icon.png" alt="google-icon" width="42">
+        <span>{{ offer.title }}</span>
+        <img src="{{ offer.companyLogo }}" alt="{{ offer.company }}-icon" width="42">
       </h4>
     </div>
     <div class="offer__keywords">
-      <app-keyword-badge />
-      <app-keyword-badge />
-      <app-keyword-badge />
-      <app-keyword-badge />
+      <ng-container *ngFor="let keyword of offer.keywords">
+        <app-keyword-badge [keyword]="keyword" />
+      </ng-container>
     </div>
   </div>
   <div class="offer__footer">
     <div class="offer_date">
       <p><strong>Offre postée le</strong></p>
-      <p>12 Mars 2024</p>
+      <p>{{ offer.date }}</p>
     </div>
     <div class="buttons_container">
       <a href="#" class="btn-custom">
