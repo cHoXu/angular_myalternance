@@ -12,6 +12,7 @@ export class UniverseService {
 
   updateUniverse(universe: string): void {
     this.universeSubject.next(universe);
+    this.universe = universe;
   }
   getUniverse(): string {
     return this.universe;
