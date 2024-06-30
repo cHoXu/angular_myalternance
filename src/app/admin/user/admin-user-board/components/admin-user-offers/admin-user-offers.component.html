@@ -1,6 +1,5 @@
 <div class="offers-container">
-  <app-offer />
-  <app-offer />
-  <app-offer />
-  <app-offer />
+   <ng-container *ngFor="let offer of offers">
+     <app-offer [offer]="offer"></app-offer>
+   </ng-container>
 </div>
