@@ -1,0 +1,110 @@
+$secondary: white
+$black_500: #6D6D6D
+$black_950: #1F1F1F
+$dark-blue_300: #779EFF
+$dark-blue_400: #4265FF
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+@mixin buttonLikeNavbar($primary: $dark-blue_500)
+  border: 2px solid $primary
+  transition: 0.3s
+  color: $secondary
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $primary
+  border-radius: $border-radius-size
+  &:hover
+    color: $primary
+    background-color: $secondary
+  i
+    margin-left: .5em
+
+.offers_container
+  display: flex
+  flex-direction: column
+  height: 900px
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-image: url("/images/company/company-hook-offers-background.png")
+  .container-title
+    flex-direction: column
+    h2
+      font-weight: bold
+  .switcher
+    @include flex(row, space-between, center)
+    i
+      cursor: grab
+  .offers
+    height: 540px
+    display: flex
+    flex-direction: row
+    .offer
+      padding: 24px
+      height: 500px
+      border: 1px solid $secondary
+      background-color: rgba($secondary, 0.3)
+      @include flex(column, space-between, start)
+      .offer-top
+        height: 120px
+        h3
+          font-size: 1.5em
+          font-weight: bold
+      p
+        font-size: .8em
+      .offer-price
+        height: 64px
+        .price
+          @include flex(row, unset, unset)
+          h1
+            width: fit-content
+            font-weight: bold
+            background: linear-gradient(to bottom, $secondary 50%, $dark-blue_400)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+          span
+            font-size: 1.5em
+            font-weight: bold
+            margin-left: 8px
+      .offer-buy
+        @include flex(row, space-between, center)
+        width: 100%
+        label
+          width: 45%
+          padding-left: 10px
+          background-color: $black_950
+          border-radius: $border-radius-min-size
+          @include flex(row, unset, center)
+          input
+            width: 50px
+            padding: 4px
+            margin: 4px 8px
+            border-radius: 1em
+        button
+          font-size: .8em
+          margin-right: unset
+          @include buttonLikeNavbar($dark-blue_400)
+          width: 100%
+        .btn-custom.contact-us
+          @include buttonLikeNavbar($black_500)
+      .offer-bottom
+        .offer-details
+          padding-top: 16px
+          padding-bottom: 16px
+          p.offer-advantage
+            margin: unset
+            padding: unset
+            text-shadow: 1px 1px 1px $black_950
+            @include flex(row, unset, center)
+            i
+              font-size: 20px
+              margin-right: 8px
+              color: $dark-blue_300

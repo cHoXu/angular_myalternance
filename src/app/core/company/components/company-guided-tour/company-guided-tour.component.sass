@@ -1,0 +1,82 @@
+$secondary: white
+$dark-blue_50: #E5EFFF
+$dark-blue_100: #D0E1FF
+$dark-blue_400: #4265FF
+$dark-blue_500: #00C8F5
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+@mixin buttonLikeNavbar($primary: $dark-blue_500)
+  border: 2px solid $primary
+  transition: 0.3s
+  color: $secondary
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $primary
+  border-radius: $border-radius-size
+  &:hover
+    color: $primary
+    background-color: $secondary
+  i
+    margin-left: .5em
+
+.guided-tour_container
+  @include flex(column, unset, center)
+  height: fit-content
+  margin: 16px auto
+  padding-bottom: 100px
+  width: 100%
+  background-color: $dark-blue_50
+  border-radius: $border-radius-min-size
+  .guided-tour__content
+    width: 90%
+    margin-top: 80px
+    color: $dark-blue_400
+    height: fit-content
+    @include flex(column, unset, center)
+    p
+      margin: unset
+      padding: unset
+      font-size: 24px
+    h3
+      font-size: 36px
+      margin-top: 12px
+      font-weight: bold
+      margin-bottom: 80px
+    .steps_container
+      width: 100%
+      @include flex(row, space-between, center)
+      .step-card
+        width: 30%
+        height: 390px
+        padding: 48px
+        background-color: $dark-blue_100
+        border-radius: $border-radius-min-size
+        @include flex(column, space-between, start)
+        h3
+          font-size: 24px
+          font-weight: bold
+          margin: unset
+          padding: unset
+        p
+          margin-top: 24px
+          font-size: 16px
+        .btn-custom
+          span
+            font-size: .9em
+          @include buttonLikeNavbar($dark-blue_400)
+    .video
+      width: 100%
+      height: 665px
+      overflow: hidden
+      background-color: $dark-blue_100
+      border-radius: $border-radius-min-size
+      background-size: cover
+      background-position: center
+      background-image: url("/images/company/video-illustration.png")
