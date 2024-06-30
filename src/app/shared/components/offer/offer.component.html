@@ -31,9 +31,25 @@
       <p>{{ offer.date }}</p>
     </div>
     <div class="buttons_container">
-      <a href="#" class="btn-custom">
+      <a href="#"
+         class="btn-custom"
+         data-bs-toggle="modal"
+         [attr.data-bs-target]="'#staticBackdrop-' + offer.id">
         <span>Voir l'offre</span>
       </a>
     </div>
+  </div>
+</div>
+
+<div
+  class="offer-modal modal modal-xl fade"
+  id="staticBackdrop-{{ offer.id }}"
+  data-bs-toggle="modal"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="Modal de l'offre"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <app-offer-modal [offer]="offer" />
   </div>
 </div>

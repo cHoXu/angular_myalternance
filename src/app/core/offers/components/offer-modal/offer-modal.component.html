@@ -1,0 +1,186 @@
+<div class="modal-content">
+      <div class="offer">
+        <div class="offer-header">
+          <div class="advertiser">
+            <img src="/images/icon/google-icon.png" alt="google-icon" width="42">
+            <h4>{{ offer.company }}</h4>
+          </div>
+          <div class="share">
+            <span>Partager</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+        </div>
+        <h3>{{ offer.title | titlecase }}</h3>
+        <div class="offer__keywords">
+          <ng-container *ngFor="let keyword of offer.keywords">
+            <app-keyword-badge [keyword]="keyword"></app-keyword-badge>
+          </ng-container>
+        </div>
+
+        <div class="ad-image" style="background-image: url('/images/offer/offer-xxx-1.png')">
+        </div>
+
+        <div class="block-info positon-description">
+          <div class="title">
+          <span class="title-decoration"></span>
+            <i class="fa-solid fa-suitcase"></i>
+            <h4>Le poste</h4>
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed
+              libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+            </p>
+            <p>
+              Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+              convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices eros
+              in cursus turpis massa tincidunt.
+            </p>
+            <div class="see-more">
+              <span>Voir plus</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="block-info perfect-profile">
+          <div class="title">
+          <span class="title-decoration"></span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h4>Le profil parfait</h4>
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed
+              libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+            </p>
+            <p>
+              Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+              convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices eros
+              in cursus turpis massa tincidunt.
+            </p>
+            <div class="see-more">
+              <span>Voir plus</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="block-info recruitment-process">
+          <div class="title">
+          <span class="title-decoration"></span>
+            <i class="fa-solid fa-user-check"></i>
+            <h4>Notre process de recrutement</h4>
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed
+              libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+            </p>
+            <p>
+              Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+              convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices eros
+              in cursus turpis massa tincidunt.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="company">
+        <div class="company-header">
+          <h4>Google</h4>
+          <img src="/images/icon/google-icon.png" alt="google-icon" width="42">
+        </div>
+        <h3>L’entreprise</h3>
+        <div class="company__keywords">
+          <span class="badge">Communication</span>
+          <span class="badge">Master 1</span>
+          <span class="badge">Paris</span>
+          <span class="badge">2 ans</span>
+          <span class="badge">Début : 02/04/2024</span>
+        </div>
+        <div class="company__links">
+          <a href="#">
+            <i class="fa-solid fa-globe"></i>
+            Voir le site web
+          </a>
+          <a href="#">
+            <i class="fa-regular fa-clone"></i>
+            Voir toutes les offres
+          </a>
+        </div>
+        <div class="block-info who-are-we">
+          <div class="title">
+            <span class="title-decoration"></span>
+            <h4>Qui sommes-nous ?</h4>
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed
+              libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+            </p>
+            <p>
+              Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+              convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices eros
+              in cursus turpis massa tincidunt.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ultrices dui sapien eget mi proin sed
+              libero. Diam quam nulla porttitor massa id neque aliquam. Eu feugiat pretium nibh ipsum.
+            </p>
+            <p>
+              Odio euismod lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis
+              convallis tellus id. Mi quis hendrerit dolor magna eget est. Lectus mauris ultrices eros
+              in cursus turpis massa tincidunt.
+            </p>
+            <div class="see-less">
+              <span>Voir moins</span>
+              <i class="fa-solid fa-chevron-up"></i>
+            </div>
+          </div>
+          <div class="block-info our-workplace">
+            <div class="title">
+              <span class="title-decoration"></span>
+              <h4>Notre lieu de travail</h4>
+            </div>
+            <a href class="address">
+                                <span>
+                                    123 - 127 Bd du chercheur Henry Fell, 75015 Paris, France
+                                </span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="company-pictures">
+              <div class="picture-blocs">
+                <div class="picture-bloc"
+                     style="background-image: url('/images/offer/company/offer-xxx-company-xxx-image-xx1.png')">
+                </div>
+                <div class="picture-bloc">
+                  <div class="picture-bloc-2-poster"
+                       style="background-image: url('/images/offer/company/offer-xxx-company-xxx-image-xx2.png')">
+                  </div>
+                  <div class="picture-bloc-2-poster"
+                       style="background-image: url('/images/offer/company/offer-xxx-company-xxx-image-xx3.png')">
+                  </div>
+                </div>
+              </div>
+              <div class="picture-blocs">
+                <div class="picture-bloc cover"
+                     style="background-image: url('images/offer/company/offer-xxx-company-xxx-image-xx4.png')">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bar-to-apply">
+      <div class="content">
+        <div>
+          <h5>Motion Designer en Alternance (H/F/N)</h5>
+          <p class="keyword">Communication · Master 1 · Paris · 2 ans · Début le 02/04/2024 ·  1733.00 bruts/mois</p>
+        </div>
+        <a class="btn-custom" href="https://google.fr">Candidater pour cette offre</a>
+      </div>
+    </div>

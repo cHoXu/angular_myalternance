@@ -22,6 +22,5 @@ export class OfferListComponent {
 
   constructor(private offerService: OfferService) {
     this.offers = this.offerService.findOffers();
-    console.log(this.offers);
   }
 }
