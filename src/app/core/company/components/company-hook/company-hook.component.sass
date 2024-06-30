@@ -1,0 +1,137 @@
+$dark-blue_50: #E5EFFF
+$dark-blue_400: #4265FF
+
+$black_500: #6D6D6D
+$black_950: #1F1F1F
+
+$tertiary-text-color: white
+
+$border-radius-size: 4em
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
+.hook-block
+  width: 100%
+  height: 38.488em
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  .hook_container
+    width: 40%
+    height: 100%
+    padding-top: 5em
+    justify-content: space-between
+    .chooser
+      height: fit-content
+      display: flex
+      align-items: start
+      flex-direction: column
+      padding-left: 4.688em
+      margin-bottom: 3em
+      h1
+        width: 80%
+        font-size: 4em
+        font-weight: bold
+        span
+          color: $dark-blue_400
+      p
+        width: 80%
+      .buttons_container
+        padding-top: 2em
+        padding-bottom: 2em
+        .btn-custom
+          color: white
+          transition: 0.3s
+          padding: .7em 2em
+          margin-right: .5em
+          background-color: $dark-blue_400
+          border-radius: $border-radius-size
+          border: 0.125em solid $dark-blue_400
+          &:hover
+            border-color: rgba($dark-blue_400, 0.4)
+            background-color: rgba($dark-blue_400, 0.6)
+        .btn-custom.advantage
+          color: $black_950
+          background-color: white
+          border-color: $black_950
+          &:hover
+            color: white
+            background-color: $black_950
+    .advertiser
+      width: 70%
+      aspect-ratio: 4.65
+      background-color: $dark-blue_50
+      border: 0.125em solid $dark-blue_400
+      border-left: unset
+      border-top-right-radius: $border-radius-min-size
+      border-bottom-right-radius: $border-radius-min-size
+      display: flex
+      align-items: center
+      flex-direction: column
+      justify-content: center
+      h2
+        font-weight: bold
+        font-size: 2.5em
+        color: $dark-blue_400
+      p
+        margin: unset
+        padding: unset
+        font-weight: bold
+        color: $black_500
+        font-size: 1.2em
+
+.hook-block
+  .hook_container.admin-demo
+    width: 55%
+    padding-top: unset
+    .illustration
+      width: 100%
+      height: 100%
+      background-image: url("/images/company/company-home_hook_chooser.png")
+      background-size: cover
+      background-position: top
+
+.hook-block.alternative
+  gap: 30px
+  height: fit-content
+  //margin-bottom: 30px
+  .hook_container
+    height: 320px
+    padding: 48px 64px
+    border-radius: $border-radius-min-size
+    p
+      font-size: 14px
+      margin-top: 16px
+    h2, h3
+      font-weight: bold
+  .hook_container.light
+    width: 60%
+    color: $dark-blue_400
+    justify-content: unset
+    border: 2px solid $dark-blue_400
+    p
+      width: 40%
+    h2
+      width: fit-content
+  .hook_container.hook_visibility
+    background-size: 80%
+    background-repeat: no-repeat
+    background-position: right
+    background-image: url("/images/company/company-hook-visibility-background.png")
+  .hook_container.hook-drive
+    background-size: 100%
+    background-repeat: no-repeat
+    background-position: right
+    background-image: url("/images/company/company-hook-drive-background.png")
+  .hook_container.dark
+    width: 40%
+    color: $tertiary-text-color
+    background-color: $dark-blue_400
+    .btn-custom
+      //@include buttonLikeNavbarCustom($dark-blue_50, $dark-blue_400, $dark-blue_400)
+

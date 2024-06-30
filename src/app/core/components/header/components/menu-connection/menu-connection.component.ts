@@ -20,7 +20,9 @@ export class MenuConnectionComponent implements OnInit {
   constructor(
     private universeService: UniverseService
   ) {
-    this.universe = this.universeService.getUniverse();
+    this.universeService.universe$.subscribe(universe => {
+      this.universe = universe;
+    });
   }
   ngOnInit(): void {
 
