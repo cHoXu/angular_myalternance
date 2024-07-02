@@ -1,171 +1,108 @@
-$main-max-width: 1290px
-$clear-blue_100: #DEF6FF
 $black_950: #1F1F1F
-$border-radius-min-size: 2em
-$secondary: white
-$clear-blue_500: #00C8F5
-$tertiary-text-color: white
-$border-radius-size: 4em
-$black_500: #6D6D6D
 $screen-sm-min: 1024px
+$clear-blue_100: #DEF6FF
+$clear-blue_500: #00C8F5
+$border-radius-min-size: 2em
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
 
 .user_subscription_offers
-  display: flex
-  height: 900px
+  width: 100%
+  padding: 10em
   margin: 0 auto
-  padding: 160px
-  align-items: center
-  flex-direction: column
-  width: $main-max-width
+  aspect-ratio: 1.56
+  @include flex(column, start, center)
   background-color: $clear-blue_100
   border-radius: $border-radius-min-size
   h2
-    width: 850px
-    font-size: 48px
+    width: 50%
+    font-size: 3em
+    font-weight: bold
     text-align: center
   .subscription_offer
-    gap: 30px
-    width: 1070px
-    height: 466px
-    display: flex
-    margin-top: 48px
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
-    .paid-subscription
+    width: 80vw
+    gap: 1.875em
+    margin-top: 3em
+    height: fit-content
+    @include flex(row, space-between, start)
+    .offers-block
       height: 100%
-      display: flex
-      align-items: start
-      flex-direction: row
+      width: 69.15%
       background-color: $black_950
+      @include flex(row, space-between, start)
       border-radius: $border-radius-min-size
       .hook-subscription
-        width: 440px
+        width: 60%
         height: 100%
-        display: flex
-        padding: 32px 24px
-        align-items: start
-        flex-direction: column
-        justify-content: space-between
+        padding: 2em 1.5em
+        @include flex(column, space-between, start)
         .title_block
-          color: $secondary
+          color: white
           h3
             font-size: 2.2em
             span
               color: $clear-blue_500
         .hook-subscription__switch
+          width: 100%
           .switch
-            width: 256px
-            height: 40px
-            display: flex
-            flex-direction: row
-            align-items: center
-            justify-content: space-between
+            width: 50%
+            aspect-ratio: 5.325
             background-color: $clear-blue_100
             border-radius: $border-radius-min-size
+            @include flex(row, space-between, center)
             .switch_option
               width: 50%
               height: 100%
-              display: flex
               cursor: pointer
               font-size: 1.2em
               color: $black_950
-              align-items: center
-              justify-content: center
+              @include flex(row, center, center)
               border-radius: $border-radius-min-size
             .switch_option.selected
-              color: $secondary
+              color: white
               background-color: $clear-blue_500
-      .subscription-card.paid-subscription
-        color: $tertiary-text-color
-        .offer-advantage
-          color: $tertiary-text-color
-          i
-            color: $clear-blue_500
-        .buttons_container
-          margin-top: 48px
-          .btn-custom
-            transition: 0.3s
-            padding: .9em 2em
-            margin-right: .5em
-            text-decoration: none
-            color: $tertiary-text-color
-            background-color: $clear-blue_500 !important
-            border: 2px solid $clear-blue_500 !important
-            border-radius: $border-radius-size
-            &:hover
-              color: $clear-blue_500 !important
-              background-color: unset !important
-    .free-subscription
-      color: $black_950
-      background-color: $secondary
-      border-radius: $border-radius-min-size
-    .subscription-card
-      width: 300px
-      height: 100%
-      display: flex
-      align-items: start
-      padding: 32px 24px
-      flex-direction: column
-      p
-        color: $black_500
-        margin-top: 12px
-      .subscription-details
-        width: 100%
-        height: 288px
-        strong
-          font-size: 48px
-        p
-          padding: 0 0
-          font-size: 12px
-          display: flex
-          align-items: center
-          i
-            font-size: 20px
-            margin-right: .5em
-        .buttons_container
-          margin-top: 48px
-          .btn-custom
-            font-size: .9em
-            transition: 0.3s
-            color: $secondary
-            padding: .9em 2em
-            margin-right: .5em
-            text-decoration: none
-            background-color: $black_950
-            border: 2px solid $black_950
-            border-radius: $border-radius-size
-            &:hover
-              border-color: rgba($black_950, 0.6)
-              background-color: rgba($black_950, 0.6)
 
+@media (min-width: 2560px)
+  .user_subscription_offers
+    h2
+      font-size: 4.5em
+@media (max-width: 1680px)
+  .user_subscription_offers
+    h2
+      font-size: 2.5em
+@media (max-width: 1440px)
+  .user_subscription_offers
+    h2
+      font-size: 2em
 @media (max-width: $screen-sm-min)
   .user_subscription_offers
-    width: 100%
-    padding: 10px
+    margin: unset
+    padding: 0.625em
     height: fit-content
+    aspect-ratio: unset
     h2
-      width: 100%
+      width: unset
       font-size: 1.4em
     .subscription_offer
-      width: 98%
-      height: fit-content
+      width: 100%
       flex-direction: column
-      justify-content: unset
       background-color: $black_950
-      border-radius: $border-radius-min-size
-      .paid-subscription
+      padding-bottom: 1.5em
+      .offers-block
+        width: 100%
         flex-direction: column
         .hook-subscription
           width: 100%
+          flex-direction: column
           .title_block
             h3
-              font-size: 1.2em
+              font-size: 1.5em
               text-align: center
           .hook-subscription__switch
             .switch
-              margin-bottom: 24px
-        .subscription-card.paid-subscription
-          margin: auto
-      .subscription-card
-        width: 95%
+              width: 80%
+              margin-bottom: 1.5em
