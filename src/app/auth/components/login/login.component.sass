@@ -72,6 +72,19 @@ $border-radius-size: 4em
       font-size: 0.75em
       margin-bottom: 0.313em
 
+.form-block.company
+  .input-group-custom
+    border-color: white
+    input
+      color: white
+      background-color: $black_950
+      &::-webkit-input-placeholder
+        color: white
+      &::-moz-placeholder
+        color: white
+  .input-group-custom:focus-within
+    border-color: white
+
 .social-connexion
   @include flex(column, center, center)
   .social-icons
