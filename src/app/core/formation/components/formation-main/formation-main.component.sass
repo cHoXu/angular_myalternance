@@ -1,3 +1,5 @@
+$screen-sm-min: 1024px
+
 .formations-container
   width: 100%
   display: flex
@@ -5,3 +7,11 @@
   margin: 5em auto
   align-items: start
   justify-content: space-between
+
+@media screen and (max-width: $screen-sm-min)
+  .formations-container
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    .menu
+      display: none

@@ -1,8 +1,14 @@
+$screen-sm-min: 1024px
+
 .formations
-  gap: 30px
-  width: 100%
+  width: 77vw
+  gap: 1.875em
   height: fit-content
   display: flex
   align-items: start
   flex-direction: column
   justify-content: start
+
+@media screen and (max-width: $screen-sm-min)
+  .formations
+    width: 90vw
