@@ -4,6 +4,9 @@ $clear-blue_500: #00C8F5
 $tertiary-text-color: white
 $border-radius-min-size: 2em
 
+$screen-sm-min: 1024px
+
+
 @mixin flex($direction: row, $justify-content: center, $align-items: center)
   display: flex
   flex-direction: $direction
@@ -59,6 +62,7 @@ $border-radius-min-size: 2em
       h2, h2
         margin: unset
         padding: unset
+        font-weight: bold
       h5
         font-size: 0.875em
         font-weight: normal
@@ -66,5 +70,32 @@ $border-radius-min-size: 2em
       h3, h6
         margin: unset
         padding: unset
+      h3
+        font-weight: bold
       h6
         font-size: 0.625em
+
+@media (max-width: $screen-sm-min)
+  .menu-offer
+    width: 100%
+    align-items: center
+    .hook.become-premium
+      width: 90%
+      aspect-ratio: 1.79
+      h4
+        font-size: 2em
+    .offers-available
+      width: 100%
+      aspect-ratio: 2.186
+      .number-of-offers
+        h2
+          font-size: 3em
+        h5
+          font-size: 1em
+      .time-offer-unlock
+        h3
+          font-size: 2.5em
+        h6
+          font-size: 1em
+
+

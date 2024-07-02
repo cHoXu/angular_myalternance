@@ -15,7 +15,7 @@ $screen-sm-min: 1024px
   color: white
   display: flex
   padding: 5% 2%
-  margin: 40px auto
+  margin: 2.5em auto
   aspect-ratio: 2.24
   flex-direction: column
   justify-content: space-between
@@ -37,8 +37,12 @@ $screen-sm-min: 1024px
 @media (max-width: $screen-sm-min)
   .offers_container
     width: 100%
-    overflow: hidden
+    aspect-ratio: unset
     border-radius: unset
     .container-title
       align-items: start
       flex-direction: column
+      h2
+        font-size: 2em
+      a
+        font-size: 1em

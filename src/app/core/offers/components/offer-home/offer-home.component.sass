@@ -1,4 +1,5 @@
 $black_950: #1F1F1F
+$screen-sm-min: 1024px
 
 .header
   width: 100%
@@ -12,3 +13,10 @@ $black_950: #1F1F1F
   align-items: start
   flex-direction: row
   justify-content: space-between
+
+@media (max-width: $screen-sm-min)
+  .offers-container
+    margin: 1em auto
+    align-items: center
+    flex-direction: column
+    justify-content: center
