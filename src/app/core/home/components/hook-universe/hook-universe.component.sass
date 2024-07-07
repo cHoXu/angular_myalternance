@@ -56,6 +56,7 @@ $screen-sm-min: 1024px
       p
         font-size: 1.5em
       .buttons_container
+        @include flex(row, start, start)
         .btn-custom
           transition: 0.3s
           color: white
@@ -65,11 +66,15 @@ $screen-sm-min: 1024px
           background-color: $clear-blue_500
           border: 2px solid $clear-blue_500
           border-radius: $border-radius-size
+          @include flex(row, center, center)
           span
             text-shadow: 0 5px 5px rgba($black_950, 0.5)
           i
             transition: .5s
             margin-left: .5em
+            .mat-icon
+              vertical-align: middle
+              text-shadow: 0 5px 5px rgba($black_950, 0.5)
           &:hover
             border-color: rgba($clear-blue_500, 0.4)
             background-color: rgba($clear-blue_500, 0.6)

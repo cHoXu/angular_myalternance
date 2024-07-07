@@ -5,14 +5,20 @@ $tertiary-text-color: white
 $secondary-text-color: $black_950
 
 .card.article
-  width: 18rem
+  width: 24vw
   border: unset
   .cover
-    height: 10rem
+    width: 100%
+    aspect-ratio: 1.415
     background-size: cover
     background-position: center
     background-repeat: no-repeat
   .card-body
+    width: 100%
+    aspect-ratio: 1.435
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     h5
       height: 3rem
       color: $clear-blue_500
@@ -30,3 +36,9 @@ $secondary-text-color: $black_950
       &:hover
         color: $secondary-text-color
         background-color: $clear-blue_100
+  &:hover
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
+
+@media screen and (max-width: 1024px)
+  .card.article
+    width: 18rem

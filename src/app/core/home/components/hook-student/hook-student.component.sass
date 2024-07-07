@@ -12,7 +12,7 @@ $screen-sm-min: 1024px
   justify-content: $justify-content
 
 @mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: white)
-  border: 2px solid $first-color
+  border: 0.125em solid $first-color
   transition: 0.3s
   color: $first-text-color
   padding: .7em 2em
@@ -43,7 +43,7 @@ $screen-sm-min: 1024px
       display: flex
       align-items: start
       flex-direction: column
-      border: 2px solid $clear-blue_500
+      border: 0.125em solid $clear-blue_500
       background-color: $clear-blue_100
       border-radius: $border-radius-min-size
       .chooser_description
@@ -72,16 +72,19 @@ $screen-sm-min: 1024px
             text-decoration: unset
             @include buttonLikeNavbarCustom(transparent, rgba(white, 0.3), white)
             font-size: 1em
-            border: 2px solid white
+            border: 0.125em solid white
+            @include flex(row, center, center)
             &:hover
               color: white
+            i .mat-icon
+              vertical-align: middle
 
   .finder
       width: 40vw
       height: 50%
       display: flex
       flex-direction: row
-      border: 2px solid $clear-blue_500
+      border: 0.125em solid $clear-blue_500
       border-radius: $border-radius-min-size
       .finder_description
         width: 50%
@@ -96,7 +99,10 @@ $screen-sm-min: 1024px
           margin-bottom: 10%
           .btn-custom
             text-decoration: unset
+            @include flex(row, center, center)
             @include buttonLikeNavbarCustom($clear-blue_500, $clear-blue_100, white)
+            i .mat-icon
+                vertical-align: middle
       .finder_background
         width: 50%
         margin-top: 32px
@@ -139,14 +145,17 @@ $screen-sm-min: 1024px
           text-decoration: unset
           @include buttonLikeNavbarCustom(transparent, rgba(white, 0.3), white)
           font-size: 1em
-          border: 2px solid white
+          border: 0.125em solid white
+          @include flex(row, center, center)
           &:hover
             color: white
+          i .mat-icon
+            vertical-align: middle
     .helper.conseil-helper
       width: 40%
       align-items: start
       justify-content: center
-      border: 2px solid $clear-blue_500
+      border: 0.125em solid $clear-blue_500
       background-color: $clear-blue_100
       border-radius: $border-radius-min-size
       .helper__inner
@@ -165,14 +174,15 @@ $screen-sm-min: 1024px
         .btn-custom
           text-decoration: unset
           @include buttonLikeNavbarCustom($clear-blue_500, $clear-blue_100, white)
-
+          @include flex(row, center, center)
+          i .mat-icon
+            vertical-align: middle
 @media (min-width: 2550px)
   .hook-block
     .chooser
       .chooser_description
         h3
           font-size: 5em
-
       .chooser_background
         .buttons_container
           .btn-custom

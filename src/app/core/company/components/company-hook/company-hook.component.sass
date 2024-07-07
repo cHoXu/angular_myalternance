@@ -15,24 +15,33 @@ $border-radius-min-size: 2em
   align-items: $align-items
   justify-content: $justify-content
 
+@mixin buttonLikeNavbarCustom($first-color, $second-color, $first-text-color: $secondary)
+  border: 2px solid $first-color
+  transition: 0.3s
+  color: $first-text-color
+  padding: .7em 2em
+  margin-right: .5em
+  background-color: $first-color
+  border-radius: $border-radius-size
+  &:hover
+    color: $first-color
+    background-color: $second-color
+  i
+    margin-left: .5em
+
 .hook-block
   width: 100%
   height: 38.488em
-  display: flex
-  flex-direction: row
-  justify-content: space-between
+  @include flex(row, space-between, center)
   .hook_container
     width: 40%
     height: 100%
     padding-top: 5em
-    justify-content: space-between
     .chooser
-      height: fit-content
-      display: flex
-      align-items: start
-      flex-direction: column
-      padding-left: 4.688em
       margin-bottom: 3em
+      height: fit-content
+      padding-left: 4.688em
+      @include flex(column, start, start)
       h1
         width: 80%
         font-size: 4em
@@ -70,10 +79,7 @@ $border-radius-min-size: 2em
       border-left: unset
       border-top-right-radius: $border-radius-min-size
       border-bottom-right-radius: $border-radius-min-size
-      display: flex
-      align-items: center
-      flex-direction: column
-      justify-content: center
+      @include flex(column, center, center)
       h2
         font-weight: bold
         font-size: 2.5em
@@ -99,7 +105,6 @@ $border-radius-min-size: 2em
 .hook-block.alternative
   gap: 30px
   height: fit-content
-  //margin-bottom: 30px
   .hook_container
     height: 320px
     padding: 48px 64px
@@ -133,5 +138,5 @@ $border-radius-min-size: 2em
     color: $tertiary-text-color
     background-color: $dark-blue_400
     .btn-custom
-      //@include buttonLikeNavbarCustom($dark-blue_50, $dark-blue_400, $dark-blue_400)
+      @include buttonLikeNavbarCustom($dark-blue_50, $dark-blue_400, $dark-blue_400)
 

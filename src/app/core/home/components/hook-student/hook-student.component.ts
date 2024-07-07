@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-hook-student',
   standalone: true,
-  imports: [],
+    imports: [
+        MatIcon
+    ],
   templateUrl: './hook-student.component.html',
   styleUrl: './hook-student.component.sass'
 })

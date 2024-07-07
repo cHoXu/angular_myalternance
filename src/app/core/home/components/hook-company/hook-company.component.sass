@@ -6,13 +6,17 @@ $secondary: white
 $border-radius-size: 4em
 $screen-sm-min: 1024px
 
+@mixin flex($direction: row, $justify-content: center, $align-items: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align-items
+  justify-content: $justify-content
+
 .company_subscription
   width: 100%
-  display: flex
   margin: 26px auto
   aspect-ratio: 2.11
-  align-items: center
-  flex-direction: column
+  @include flex(column, center, center)
   background-color: $clear-blue_100
   border-radius: $border-radius-min-size
   .company_subscription__header
@@ -24,12 +28,10 @@ $screen-sm-min: 1024px
     background-image: url("/images/landing-page/compagny-subscription-background.png")
   .company_subscription__content
     width: 90%
-    display: flex
     margin-top: 2%
     color: $black_950
     aspect-ratio: 3.57
-    align-items: center
-    flex-direction: column
+    @include flex(column, center, center)
     p
       margin: unset
       padding: unset
@@ -69,6 +71,12 @@ $screen-sm-min: 1024px
         &:hover
           color: $secondary
           background-color: rgba($black_950, 0.6)
+    .buttons_container
+      @include flex(row, center, center)
+      .btn-custom
+        @include flex(row, center, center)
+        i .mat-icon
+          vertical-align: middle
 
 @media (max-width: $screen-sm-min)
   .company_subscription
@@ -88,7 +96,4 @@ $screen-sm-min: 1024px
         font-size: 1em
     .buttons_container
       gap: 12px
-      display: flex
-      align-items: center
-      flex-direction: column
-      justify-content: unset
+      @include flex(column, unset, center)
